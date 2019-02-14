@@ -32,15 +32,16 @@ int main(){
 		/* Check if button B is pressed;
 		 * turn on LED matrix if it is. */
 		 if (!((1<<26) & GPIO->IN)){
-			 for(int i = 4; i<=15; i++){
+			 for(int i = 13; i<=15; i++){
 				 GPIO->OUTSET=(1<<i);
 			 }
+
 		 }
 		/* Check if button A is pressed;
 	 	 * turn off LED matrix if it is. */
-		if (!((1<<17)&GPIO->IN)){
-			for(int i = 4; i<=15; i++){
-				GPIO->OUTCLR=(1<<i);
+		if (!((1<<17) & GPIO->IN)){
+			for(int i = 13; i<=15; i++){
+				GPIO->OUTCLR=~(1<<i);
 			}
 		}
 		sleep = 10000;
