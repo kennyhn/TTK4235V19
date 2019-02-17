@@ -22,3 +22,5 @@ typedef struct {
 } NRF_GPIOTE_REG;
 
 #endif
+
+void init_GPIOTE();
