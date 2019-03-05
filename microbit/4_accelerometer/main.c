@@ -10,7 +10,10 @@ int main(){
     GPIO->DIRSET = (1 << i);
     GPIO->OUTCLR = (1 << i);
   }
+
   uint8_t who_am_i = twi_test();
+  for(int i = 13; i<=15; i++)
+    GPIO->OUTSET=(1<<i);
 
   if (who_am_i == 0x5A){
     for(int i = 13; i<=15; i++)
