@@ -71,7 +71,7 @@ void twi_multi_write(uint8_t slave_address, uint8_t start_register, int register
 uint8_t twi_test(){
   uint8_t* data_buffer;
   data_buffer = (uint8_t *) malloc(8*sizeof(uint8_t));
-  twi_multi_read(0x1D, 0x0D, 1, data_buffer);
+  twi_multi_read(0x1D, 0x0D, 2, data_buffer);
   uint8_t who_am_i = *data_buffer;
   free(data_buffer);
   return who_am_i;

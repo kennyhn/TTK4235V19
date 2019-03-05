@@ -13,8 +13,8 @@ int main(){
   uint8_t who_am_i = twi_test();
 
   if (who_am_i == 0x5A){
-    //for(int i = 13; i<=15; i++)
-    //  GPIO->OUTSET=(1<<i);
+    for(int i = 13; i<=15; i++)
+      GPIO->OUTSET=(1<<i);
   }
   while(1);
   return 0;
