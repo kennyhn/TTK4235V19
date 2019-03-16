@@ -13,8 +13,8 @@ void twi_init(){
   //SDA pin, S0D1, input, pull up
   GPIO->PIN_CNF[SDA_PIN] = 0 | (3<<2) | (6<<8);
 
-  TWI0->PSELSCL = (1<<SCL_PIN); //Select pin number 30
-  TWI0->PSELSDA = (1<<SDA_PIN); //Select pin number 0
+  TWI0->PSELSCL = 30; //Select pin number 30
+  TWI0->PSELSDA = 0; //Select pin number 0
 
   //Sets frequency at 100 kbps
   TWI0->FREQUENCY = 0x01980000;
