@@ -64,7 +64,7 @@ void set_order(int floor, elev_button_type_t button_type){
 int is_active_orders(){
 
     for (int i = 0; i<NUM_OF_BUTTONS; i++){
-        if (Orderlist[i].active = 1){
+        if (Orderlist[i].active == 1){
             return 1;
         }
     }
@@ -72,9 +72,17 @@ int is_active_orders(){
 }
 
 void poller(){
-    for (int i = 0; i<NUM_OF_BUTTONS; i++){
-        if (Orderlist[i].active){
-            printf("Knapp nr.", i, "aktiv");
+    for (int floor = 0; floor<N_FLOORS; floor++){
+        for (elev_button_type_t button = BUTTON_CALL_UP; button <= BUTTON_COMMAND; button++){
+            if (floor == 0 && button == BUTTON_CALL_DOWN);
+                
+            else if (floor == (N_FLOORS - 1) && button == BUTTON_CALL_UP);
+            
+            else{
+                elev_get_button_signal(button, floor);
+                printf("%d",elev_get_button_signal(button, floor));
+            }
+    
         }
     }
 }
