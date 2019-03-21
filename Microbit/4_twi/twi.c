@@ -1,6 +1,8 @@
 #include <stdint.h>
 #include "twi.h"
 #include "gpio.h"
+#include "uart.h"
+#include "utility.h"
 
 #define TWI0 ((NRF_TWI_REG*)0x40003000)
 
@@ -63,6 +65,9 @@ void twi_init(){
 
 		TWI0->PSELSCL = SCL_PIN;
 		TWI0->PSELSDA = SDA_PIN;
+
+		TWI0->ERROR = 0;
+
     /* 3) Use normal I2C speed, i.e. 100 kHz operation. */
 		TWI0->FREQUENCY = 0x01980000;
 
@@ -83,28 +88,29 @@ void twi_multi_read(uint8_t slave_address, uint8_t start_register,
 		TWI0->TXDSENT = 0;
 		TWI0->TXD = start_register;
 		while(!TWI0->TXDSENT);
-		int i;
-		for (i = 13; i<=15; i++)
-			GPIO->OUTSET=(1<<i);
+
     /* As explained in the guidance lecture, these "no-operation" */
     /* instructions are necessary because of a timing issue between */
     /* nRF51822 and the LSM303AGR. The reason we use inline assembly */
     /* is to always force the compiler to keep these instructions, */
     /* regardless of optimization level. */
 
-		for (i = 0; i < 10; i++){
+		for (int i = 0; i < 10; i++){
         __asm("nop");
-    }
+    	}
+		TWI0->RXDREADY = 0;
 		TWI0->STARTRX = 1;
-  	for (i = 0; i<registers_to_read-1; i++){
-    //Read from said register
-    	while(!TWI0->RXDREADY);
-    	TWI0->RXDREADY = 0;
-    	data_buffer[i] = TWI0->RXD;
-  	}
+  		for (int i = 0; i<registers_to_read-1; i++){
+    		//Read from said register
+	    	while(!TWI0->RXDREADY);
+	    	TWI0->RXDREADY = 0;
+	    	data_buffer[i] = TWI0->RXD;
+	  	}
 
-  	TWI0->STOP = 1;
-  	data_buffer[registers_to_read-1] = TWI0->RXD;
+
+	  	TWI0->STOP = 1;
+		while(!TWI0->RXDREADY);
+	  	data_buffer[registers_to_read-1] = TWI0->RXD;
 		TWI0->RXDREADY = 0;
     /* Your task: */
 

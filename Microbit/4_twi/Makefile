@@ -1,7 +1,6 @@
 FAMILY := nrf51
-SOURCES := main.c uart.c twi.c utility.c
+SOURCES := main.c uart.c twi.c utility.c accel.c
 SOURCES += ubit_button.c ubit_led_matrix.c
-#SOURCES +=  accel.c
 
 BUILD_DIR := build
 LINKER_SCRIPT := $(BUILD_DIR)/linker_script.ld
@@ -20,7 +19,7 @@ CFLAGS += -mcpu=cortex-m0 -mthumb -mabi=aapcs -mfloat-abi=soft
 CFLAGS += -ffunction-sections -fdata-sections --short-enums
 CFLAGS += -fno-strict-aliasing -fno-builtin
 # Good pracice
-# CFLAGS += -Wall -Werror -std=gnu99 -g3
+CFLAGS += -Wall -Werror -std=gnu99 -g3
 # CFLAGS += -ggdb -Og / -O0 / -O3 etc
 
 ## Linker flags

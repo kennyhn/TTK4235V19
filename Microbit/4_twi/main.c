@@ -8,26 +8,21 @@
 #include "gpio.h"
 
 int main(){
-		uart_init();
+	uart_init();
     ubit_led_matrix_init();
-
-		twi_init();
-		int i;
-		for (i = 4; i <= 15; i++){
+	twi_init();
+	accel_init();
+	
+	int i;
+	for (i = 4; i <= 15; i++){
     	GPIO->DIRSET = (1 << i);
     	GPIO->OUTCLR = (1 << i);
   	}
 
-		uint8_t* data_buffer;
-  	data_buffer = (uint8_t *) malloc(8*sizeof(uint8_t));
-  	twi_multi_read(0x1D, 0x0D, 2, data_buffer);
-  	uint8_t who_am_i = *data_buffer;
-		free(data_buffer);
-    //accel_init();
 
 
-    /*int data_buffer[3];
-    int x_dot, y_dot;
+	int16_t x_dot, y_dot;
+	int* data_buffer = (int *)malloc(3*sizeof(int));
 
     while(1)
     {
@@ -45,7 +40,6 @@ int main(){
             data_buffer[1],
             data_buffer[2]
         );
-    }*/
-		while(1);
+    }
 	return 0;
 }

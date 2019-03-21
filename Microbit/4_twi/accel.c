@@ -2,10 +2,10 @@
 #include "accel.h"
 #include "twi.h"
 
-#define ACCEL_ADDR          __FILL_THIS_OUT_
-#define ACCEL_DATA_REG      __FILL_THIS_OUT_
-#define ACCEL_CTRL_REG_1    __FILL_THIS_OUT_
-#define ACCEL_CTRL_REG_4    __FILL_THIS_OUT_
+#define ACCEL_ADDR          0x19
+#define ACCEL_DATA_REG      0xA8
+#define ACCEL_CTRL_REG_1    0x20
+#define ACCEL_CTRL_REG_4    0x23
 
 #define ACCEL_100_HZ_HR_ON  0x57
 #define ACCEL_HR_SELECT     0x08
@@ -27,7 +27,7 @@ void accel_read_x_y_z(int * p_data_buffer){
     uint8_t raw_data[6];
 
     /* Your task: */
-
+    twi_multi_read(ACCEL_ADDR, ACCEL_DATA_REG, 6, raw_data);
     /* 1) Read the X-, Y-, and Z accelerometer registers. */
     /*    You do not need to apply any transformations to */
     /*    the data that you read; this is already done */
