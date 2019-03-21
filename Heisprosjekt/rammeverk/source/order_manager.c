@@ -1,4 +1,5 @@
 #include "order_manager.h"
+#include "lights.h"
 #include "elev_driver.h"
 #include <stdio.h>
 
@@ -41,23 +42,28 @@ void clear_all_orders_at_floor(int floor){
             Orderlist[floor + i].active = 0;
         }
     }
-   else if (floor == (N_FLOORS - 1)){
-    
+    else if (floor == (N_FLOORS - 1)){
         for (int i = 0; i < (NUM_OF_BUTTON_TYPES - 1); i++){
-                Orderlist[2 + (NUM_OF_BUTTON_TYPES)*(floor - 1) + i].active = 0;
+            Orderlist[2 + (NUM_OF_BUTTON_TYPES)*(floor - 1) + i].active = 0;
         }
     }
-   else{
+    else{
         for (int i = 0; i < (NUM_OF_BUTTON_TYPES); i++){
-                Orderlist[2 + (NUM_OF_BUTTON_TYPES)*(floor - 1) + i].active = 0;
+            Orderlist[2 + (NUM_OF_BUTTON_TYPES)*(floor - 1) + i].active = 0;
         }
     }
-
+    /* Forslag til forbedring:
+    Gjør som i poller? Lettere kode
+    Trenger ikke å knote med matten i listen
+    */
 }
 
 void set_order(int floor, elev_button_type_t button_type){
 
-    Orderlist[floor].button_type = 1;
+    for (int i = 0; i<N_FLOORS; i++) {
+        if (Orderlist[i].floor == floor && Orderlist[i].type == button_type)
+            Orderlist.active = 1;
+    }
 }
 
 
@@ -71,21 +77,7 @@ int is_active_orders(){
     return 0;
 }
 
-void poller(){
-    for (int floor = 0; floor<N_FLOORS; floor++){
-        for (elev_button_type_t button = BUTTON_CALL_UP; button <= BUTTON_COMMAND; button++){
-            if (floor == 0 && button == BUTTON_CALL_DOWN);
-                
-            else if (floor == (N_FLOORS - 1) && button == BUTTON_CALL_UP);
-            
-            else{
-                elev_get_button_signal(button, floor);
-                printf("%d",elev_get_button_signal(button, floor));
-            }
-    
-        }
-    }
-}
+
 
 order is_order_active(int order_number){
     return Orderlist[order_number];

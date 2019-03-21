@@ -1,5 +1,5 @@
-#ifndef ORDER_MANAGER_H
-#define ORDER_MANAGER_H
+#ifndef __ORDER_MANAGER_H__
+#define __ORDER_MANAGER_H__
 
 #include "elev_driver.h"
 

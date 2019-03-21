@@ -1,5 +1,5 @@
-#ifndef ELEVATOR_H
-#define ELEVATOR_H
+#ifndef __ELEVATOR_H__
+#define __ELEVATOR_H__
 #include "elev_driver.h";
 
 void set_current_motor_dir(elev_motor_direction_t curr_motor_dir); //i elev_driver.c??
