@@ -2,11 +2,6 @@
 #include "elev_driver.h"
 #include <stdio.h>
 
-typedef struct Order {
-    int floor;
-    elev_button_type_t button_type;
-    int active; //used as boolean
-}order;
 
 #define NUM_OF_BUTTONS 10
 #define NUM_OF_BUTTON_TYPES 3
@@ -45,15 +40,19 @@ void clear_all_orders_at_floor(int floor){
         for (int i = 0; i < (NUM_OF_BUTTON_TYPES - 1); i++){
             Orderlist[floor + i].active = 0;
         }
-    else if (floor == (N_FLOORS - 1)){
+    }
+   else if (floor == (N_FLOORS - 1)){
+    
         for (int i = 0; i < (NUM_OF_BUTTON_TYPES - 1); i++){
                 Orderlist[2 + (NUM_OF_BUTTON_TYPES)*(floor - 1) + i].active = 0;
         }
+    }
    else{
         for (int i = 0; i < (NUM_OF_BUTTON_TYPES); i++){
-                Orderlist[2 + (NUM_OF_BUTTON_TYPES)*(floor - 1) + i].active = 0
+                Orderlist[2 + (NUM_OF_BUTTON_TYPES)*(floor - 1) + i].active = 0;
         }
     }
+
 }
 
 void set_order(int floor, elev_button_type_t button_type){
@@ -64,10 +63,22 @@ void set_order(int floor, elev_button_type_t button_type){
 
 int is_active_orders(){
 
-    for (int i = 0; i<NUM_OF_BUTTONS; i++)
+    for (int i = 0; i<NUM_OF_BUTTONS; i++){
         if (Orderlist[i].active = 1){
             return 1;
         }
     }
     return 0;
+}
+
+void poller(){
+    for (int i = 0; i<NUM_OF_BUTTONS; i++){
+        if (Orderlist[i].active){
+            printf("Knapp nr.", i, "aktiv");
+        }
+    }
+}
+
+order is_order_active(int order_number){
+    return Orderlist[order_number];
 }
