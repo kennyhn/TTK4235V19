@@ -45,6 +45,9 @@
 # Visual Studio Code files
 *.vscode
 
+# HTML files
+  *.html
+
 # Kernel Module Compile Results
 *.mod*
 *.cmd
