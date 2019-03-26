@@ -45,6 +45,10 @@
 # Visual Studio Code files
 *.vscode
 
+# HTML files
+  *.html
+  softdevice/
+
 # Kernel Module Compile Results
 *.mod*
 *.cmd
