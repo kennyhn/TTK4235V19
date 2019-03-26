@@ -11,12 +11,10 @@ typedef struct Order {
 
 void init_orderlist();
 void clear_all_orders();
-void set_order(int floor, elev_button_type_t button_type);
-int is_active_orders();
 void clear_all_orders_at_floor(int floor);
-void poller();
-order is_order_active(int order_number);
-
+void set_order(int floor, elev_button_type_t button_type);
+order get_order(int floor, elev_button_type_t button_type);
+int is_order_at_floor(int floor, elev_motor_direction_t motor_dir);
 
 
 
