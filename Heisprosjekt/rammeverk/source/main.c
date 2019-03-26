@@ -1,12 +1,10 @@
 #include "elev_driver.h"
 #include "order_manager.h"
 #include "controller.h"
-#include "elevator.h"
-#include <stdio.h>
-#include <time.h>
+#include "state_machine.h"
 #include "timer.h"
 
-
+#include <stdio.h>
 /*
     elev_motor_direction_t
     BUTTON_CALL_UP
@@ -24,25 +22,37 @@ int main() {
         return 1;
     }
 
-    printf("Press STOP button to stop elevator and exit program.\n");
+    elev_motor_direction_t motor_dir;
     init_orderlist();
-    elev_set_motor_direction(DIRN_DOWN);
+    state_init();
     while (1) {
         button_poller();
         floor_sensor_poller();
-        // Change direction when we reach top/bottom floor
-        if (elev_get_floor_sensor_signal() == N_FLOORS - 1) {
-            elev_set_motor_direction(DIRN_DOWN);
-        } else if (elev_get_floor_sensor_signal() == 0) {
-            elev_set_motor_direction(DIRN_UP);
-        }
 
-        // Stop elevator and exit program if the stop button is pressed
-        if (elev_get_stop_signal()) {
-            elev_set_motor_direction(DIRN_STOP);
-            break;
+        state current_state = next_state();
+        switch(current_state){
+            
+            case STOP_SHAFT:
+                printf("STOP SHAFT\n");
+                state_STOP_shaft();
+                break;
+            case STOP_FLOOR:
+                printf("STOP FLOOR\n");
+                state_STOP_floor();
+            case DOOR_OPEN:
+                printf("DOOR OPEN\n");
+                state_door_open();
+            case IDLE:
+                printf("IDLE\n");
+                state_idle();
+                printf("motor_dir: %d\n", motor_dir);
+                break;
+            case MOVING:
+                motor_dir = choose_dir();
+                state_moving(motor_dir);
+                break;
         }
     }
-
+    
     return 0;
 }

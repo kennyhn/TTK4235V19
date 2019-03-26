@@ -44,12 +44,34 @@ order get_order(int floor, elev_button_type_t button_type){
     return Orderlist[floor][button_type];
 }
 
+int orders_above(int current_floor){
+    if (current_floor != -1){
+        for (int floor = current_floor+1; floor < N_FLOORS; floor++){
+            for (elev_button_type_t button = 0; button < N_BUTTONS; button++){
+                if (Orderlist[floor][button].active)
+                    return 1; //true
+            }
+        }
+    }
+    return 0; //false
+}
+
+int orders_below(int current_floor){
+    for (int floor = current_floor-1; floor>=0; floor--){
+        for (elev_button_type_t button = 0; button < N_BUTTONS; button++){
+            if (Orderlist[floor][button].active)
+                return 1; //true
+        }
+    }
+    return 0; //false
+}
 
 int is_active_orders(){
     for (int floor = 0; floor < N_FLOORS; floor++){
-        for (elev_button_type_t button = 0; button < N_BUTTONS; button++)
-        if (Orderlist[floor][button].active)
-            return 1;
+        for (elev_button_type_t button = 0; button < N_BUTTONS; button++){
+            if (Orderlist[floor][button].active)
+                return 1;
+        }
     }
     return 0;
 }
@@ -57,18 +79,25 @@ int is_active_orders(){
 
 
 int is_order_at_floor(int floor, elev_motor_direction_t motor_dir){
-    for (elev_button_type_t button = 0; button < N_BUTTONS; button++){
-        if (Orderlist[floor][button].active){
-            if (Orderlist[floor][button].button_type == BUTTON_COMMAND)
-                return 1; //true
-            if (Orderlist[floor][button].button_type == BUTTON_CALL_UP && motor_dir == DIRN_UP)
-                return 1; //true
-            if (Orderlist[floor][button].button_type == BUTTON_CALL_DOWN && motor_dir == DIRN_DOWN)
-                return 1; //true
-         }
+    if (floor != -1 && !orders_above(floor) && motor_dir == DIRN_UP)
+        return 1; //true
+    else if (floor != -1 && !orders_below(floor) && motor_dir == DIRN_DOWN)
+        return 1; //true
+    else{
+        for (elev_button_type_t button = 0; button < N_BUTTONS; button++){
+            if (Orderlist[floor][button].active){
+                if (Orderlist[floor][button].button_type == BUTTON_COMMAND)
+                    return 1; //true
+                else if (Orderlist[floor][button].button_type == BUTTON_CALL_UP && motor_dir == DIRN_UP)
+                    return 1; //true
+                else if (Orderlist[floor][button].button_type == BUTTON_CALL_DOWN && motor_dir == DIRN_DOWN)
+                    return 1; //true
+            }
+        }
     }
     return 0; //false
 }
+
 
 void update_button_lights(){
     for (int floor = 0; floor<N_FLOORS; floor++){
