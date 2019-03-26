@@ -1,6 +1,7 @@
 #include "elev_driver.h"
 #include "order_manager.h"
 #include "controller.h"
+#include "elevator.h"
 #include <stdio.h>
 
 
@@ -24,10 +25,11 @@ int main() {
 
     printf("Press STOP button to stop elevator and exit program.\n");
     init_orderlist();
+    elev_set_motor_direction(DIRN_DOWN);
     while (1) {
-
-        poller();
-        //update_floor_lights();
+        button_poller();
+        floor_sensor_poller();
+        
         // Change direction when we reach top/bottom floor
         if (elev_get_floor_sensor_signal() == N_FLOORS - 1) {
             elev_set_motor_direction(DIRN_DOWN);

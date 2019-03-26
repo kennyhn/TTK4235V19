@@ -1,5 +1,4 @@
 #include "order_manager.h"
-#include "lights.h"
 #include "elev_driver.h"
 #include <stdio.h>
 
@@ -19,11 +18,13 @@ void clear_all_orders(){
         for (elev_button_type_t button = 0; button < N_BUTTONS; button++ )
             Orderlist[floor][button].active = 0;
     }
+    update_button_lights();
 }
 
 void clear_all_orders_at_floor(int floor){
     for (elev_button_type_t button = 0; button < N_BUTTONS; button++)
         Orderlist[floor][button].active = 0;
+    update_button_lights();
 }
 
 void set_order(int floor, elev_button_type_t button_type){
@@ -69,3 +70,17 @@ int is_order_at_floor(int floor, elev_motor_direction_t motor_dir){
     }
     return 0; //false
 }
+
+void update_button_lights(){
+    for (int floor = 0; floor<N_FLOORS; floor++){
+        for (elev_button_type_t button = 0; button<N_BUTTONS; button++){
+            if (floor == (N_FLOORS-1) && button == BUTTON_CALL_UP){}
+            else if (floor == 0 && button == BUTTON_CALL_DOWN){}
+            else{
+                order order = get_order(floor, button);
+                elev_set_button_lamp(order.button_type, order.floor, order.active);
+            }
+        }
+    }
+}
+

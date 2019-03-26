@@ -1,9 +1,10 @@
 #include "controller.h"
+#include "elevator.h"
 #include "order_manager.h"
 
 /*state next_state(){
     // Stop button pushed
-    if (elev_get_stop_signal()){
+    if (floor){
         if (elev_get_floor_sensor_signal() == -1){
            return STOP_SHAFT;
         }
@@ -18,9 +19,16 @@
     // TBD: Logic for when to go to MOVING and DOOR_OPEN
 }*/
 
+int floor_sensor_poller(){
+    int floor = elev_get_floor_sensor_signal();
+    if (floor != -1){
+        set_last_floor(floor);
+        update_floor_lights(floor);
+    }
+    return floor;
+}
 
-void poller(){
-
+void button_poller(){
     for (int floor = 0; floor < N_FLOORS; floor++){
         for (elev_button_type_t button = 0; button < N_BUTTONS; button++){
             if (floor == 0 && button == BUTTON_CALL_DOWN){}
@@ -31,7 +39,6 @@ void poller(){
             }
         }
     }
-    // Kanskje ha denne her et annet sted? Knappene funker nå iaf.
 }
 
 void update_floor_lights(int last_floor){
