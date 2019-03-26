@@ -1,6 +1,7 @@
 #include "controller.h"
 #include "elevator.h"
 #include "order_manager.h"
+#include "time.h"
 
 /*state next_state(){
     // Stop button pushed
@@ -25,6 +26,7 @@ int floor_sensor_poller(){
         set_last_floor(floor);
         update_floor_lights(floor);
     }
+    set_current_floor(floor);
     return floor;
 }
 

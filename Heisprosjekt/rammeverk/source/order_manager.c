@@ -48,9 +48,8 @@ order get_order(int floor, elev_button_type_t button_type){
 int is_active_orders(){
     for (int floor = 0; floor < N_FLOORS; floor++){
         for (elev_button_type_t button = 0; button < N_BUTTONS; button++)
-        if (Orderlist[floor][button].active){
+        if (Orderlist[floor][button].active)
             return 1;
-        }
     }
     return 0;
 }

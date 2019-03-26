@@ -3,7 +3,8 @@
 #include "controller.h"
 #include "elevator.h"
 #include <stdio.h>
-
+#include <time.h>
+#include "timer.h"
 
 
 /*
@@ -29,7 +30,6 @@ int main() {
     while (1) {
         button_poller();
         floor_sensor_poller();
-        
         // Change direction when we reach top/bottom floor
         if (elev_get_floor_sensor_signal() == N_FLOORS - 1) {
             elev_set_motor_direction(DIRN_DOWN);
