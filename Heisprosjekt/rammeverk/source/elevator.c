@@ -1,4 +1,4 @@
-#include "elev_driver.h";
+#include "elev_driver.h"
 #include <stdio.h>
 
 typedef struct ElevatorInfo {
