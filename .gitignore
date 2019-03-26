@@ -47,6 +47,7 @@
 
 # HTML files
   *.html
+  softdevice/
 
 # Kernel Module Compile Results
 *.mod*
