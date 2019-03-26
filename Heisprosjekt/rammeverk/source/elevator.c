@@ -29,6 +29,14 @@ void set_last_floor(int last_floor){
     elev.last_floor = last_floor;
 }
 
+int get_current_floor(){
+    return elev.curr_floor;
+}
+
+int get_last_floor(){
+    return elev.last_floor;
+}
+
 elev_motor_direction_t get_last_motor_dir(){
     return elev.last_motor_dir;
 }

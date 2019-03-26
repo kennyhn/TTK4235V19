@@ -3,9 +3,11 @@
 
 typedef enum State {MOVING, IDLE, DOOR_OPEN, STOP_FLOOR, STOP_SHAFT} state;
 
-//state next_state();
+
 void button_poller();
 int floor_sensor_poller();
 void update_floor_lights(int last_floor);
+int choose_dir(order Orderlist, elevator elev);
+state next_state();
 
 #endif
