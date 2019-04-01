@@ -23,23 +23,22 @@ state next_state(){
 
 elev_motor_direction_t choose_dir(){
   //Continue same direction
-  if (get_last_motor_dir() == DIRN_UP && orders_above(get_last_floor()))
+  if (get_current_motor_dir() == DIRN_UP && orders_above(get_last_floor()))
       return DIRN_UP;
   
-  else if (get_last_motor_dir() == DIRN_DOWN && orders_below(get_last_floor()))
+  else if (get_current_motor_dir() == DIRN_DOWN && orders_below(get_last_floor()))
       return DIRN_DOWN;
 
 
   //Change direction
-  if (get_last_motor_dir() == DIRN_UP && !orders_above(get_last_floor()))
+  if (get_current_motor_dir() == DIRN_UP && !orders_above(get_last_floor()))
       return DIRN_DOWN;
   
-  else if (get_last_motor_dir() == DIRN_DOWN && !orders_below(get_last_floor()))
+  else if (get_current_motor_dir() == DIRN_DOWN && !orders_below(get_last_floor()))
       return DIRN_UP;
   
 
   //Choose direction
-  printf("Siste etasje %d\n",get_last_floor());
   for (int floor = 0; floor < N_FLOORS; floor++){
     for (elev_button_type_t button = 0; button < N_BUTTONS; button++){
       if (get_order(floor, button).active){
@@ -59,7 +58,6 @@ void floor_sensor_poller(){
     int floor = elev_get_floor_sensor_signal();
     if (floor != -1){
         set_last_floor(floor);
-        set_last_motor_dir(get_current_motor_dir());
         update_floor_lights(floor);
     }
     set_current_floor(floor);

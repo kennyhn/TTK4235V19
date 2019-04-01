@@ -22,7 +22,9 @@ void state_idle(){
   elev_set_door_open_lamp(0);
   elev_set_motor_direction(DIRN_STOP);
   if (elev_get_floor_sensor_signal() != (-1)){
-    set_current_motor_dir(DIRN_STOP);
+    if (!is_active_orders()){
+      set_current_motor_dir(DIRN_STOP);
+    }
     set_current_floor(elev_get_floor_sensor_signal());
   }
 }
@@ -37,6 +39,7 @@ void state_moving(elev_motor_direction_t motor_dir){
 
 void state_door_open(){
   elev_set_motor_direction(DIRN_STOP);
+  set_last_motor_dir(DIRN_STOP);
     time_t door_timer;
     start_timer(&door_timer);
     do{
@@ -53,6 +56,7 @@ void state_STOP_shaft(){
   clear_all_orders();
   elev_set_door_open_lamp(0);
   elev_set_motor_direction(DIRN_STOP);
+  set_current_motor_dir(DIRN_STOP);
   while(elev_get_stop_signal()){
     elev_set_stop_lamp(1);
   }
@@ -62,6 +66,7 @@ void state_STOP_shaft(){
 void state_STOP_floor(){
   clear_all_orders();
   elev_set_motor_direction(DIRN_STOP);
+  set_current_motor_dir(DIRN_STOP);
   while(elev_get_stop_signal()){
     elev_set_stop_lamp(1);
     elev_set_door_open_lamp(1);
