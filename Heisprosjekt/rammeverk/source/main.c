@@ -3,6 +3,7 @@
 #include "controller.h"
 #include "state_machine.h"
 #include "timer.h"
+#include "elevator.h"
 
 #include <stdio.h>
 /*
@@ -28,8 +29,25 @@ int main() {
     while (1) {
         button_poller();
         floor_sensor_poller();
-
+       
         state current_state = next_state();
+        switch(current_state){
+            case STOP_SHAFT:
+                printf("STOP SHAFT\n");
+                break;
+            case STOP_FLOOR:
+                printf("STOP FLOOR\n");
+                break;
+            case DOOR_OPEN:
+                printf("DOOR OPEN\n");
+                break;
+            case IDLE:
+                printf("IDLE\n");
+                break;
+            case MOVING:
+                printf("MOVING\n");
+                break;
+        }
         switch(current_state){
             
             case STOP_SHAFT:
@@ -45,10 +63,20 @@ int main() {
             case IDLE:
                 printf("IDLE\n");
                 state_idle();
-                printf("motor_dir: %d\n", motor_dir);
                 break;
             case MOVING:
                 motor_dir = choose_dir();
+                switch(get_last_motor_dir()) {
+                    case DIRN_UP:
+                        printf("OPP\n");
+                        break;
+                    case DIRN_STOP:
+                        printf("stop\n");
+                        break;
+                    case DIRN_DOWN:
+                        printf("Ned\n");
+                        break;
+                }
                 state_moving(motor_dir);
                 break;
         }

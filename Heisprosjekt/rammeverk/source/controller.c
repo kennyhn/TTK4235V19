@@ -22,24 +22,24 @@ state next_state(){
 }
 
 elev_motor_direction_t choose_dir(){
-
   //Continue same direction
-  if (get_current_motor_dir() == DIRN_UP && orders_above(get_last_floor()))
+  if (get_last_motor_dir() == DIRN_UP && orders_above(get_last_floor()))
       return DIRN_UP;
   
-  else if (get_current_motor_dir() == DIRN_DOWN && orders_below(get_last_floor()))
+  else if (get_last_motor_dir() == DIRN_DOWN && orders_below(get_last_floor()))
       return DIRN_DOWN;
 
 
   //Change direction
-  if (get_current_motor_dir() == DIRN_UP && !orders_above(get_last_floor()))
+  if (get_last_motor_dir() == DIRN_UP && !orders_above(get_last_floor()))
       return DIRN_DOWN;
   
-  else if (get_current_motor_dir() == DIRN_DOWN && !orders_below(get_last_floor()))
+  else if (get_last_motor_dir() == DIRN_DOWN && !orders_below(get_last_floor()))
       return DIRN_UP;
   
 
   //Choose direction
+  printf("Siste etasje %d\n",get_last_floor());
   for (int floor = 0; floor < N_FLOORS; floor++){
     for (elev_button_type_t button = 0; button < N_BUTTONS; button++){
       if (get_order(floor, button).active){
@@ -50,7 +50,7 @@ elev_motor_direction_t choose_dir(){
       }
     }
   }
-  //Should not happen
+  //If order at same floor
   return DIRN_STOP;
 }
 
