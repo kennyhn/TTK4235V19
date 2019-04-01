@@ -32,23 +32,6 @@ int main() {
        
         state current_state = next_state();
         switch(current_state){
-            case STOP_SHAFT:
-                printf("STOP SHAFT\n");
-                break;
-            case STOP_FLOOR:
-                printf("STOP FLOOR\n");
-                break;
-            case DOOR_OPEN:
-                printf("DOOR OPEN\n");
-                break;
-            case IDLE:
-                printf("IDLE\n");
-                break;
-            case MOVING:
-                printf("MOVING\n");
-                break;
-        }
-        switch(current_state){
             
             case STOP_SHAFT:
                 printf("STOP SHAFT\n");
@@ -66,17 +49,6 @@ int main() {
                 break;
             case MOVING:
                 motor_dir = choose_dir();
-                switch(get_last_motor_dir()) {
-                    case DIRN_UP:
-                        printf("OPP\n");
-                        break;
-                    case DIRN_STOP:
-                        printf("stop\n");
-                        break;
-                    case DIRN_DOWN:
-                        printf("Ned\n");
-                        break;
-                }
                 state_moving(motor_dir);
                 break;
         }
