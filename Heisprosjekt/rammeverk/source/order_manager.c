@@ -1,5 +1,6 @@
 #include "order_manager.h"
 #include "elev_driver.h"
+#include "elevator.h"
 #include <stdio.h>
 
 order Orderlist[N_FLOORS][N_BUTTONS];
@@ -79,17 +80,25 @@ int is_active_orders(){
 
 
 int is_order_at_floor(int floor, elev_motor_direction_t motor_dir){
-    if (floor != -1 && !orders_above(floor) && motor_dir == DIRN_UP)
+    if (floor != -1 && !orders_above(floor) && motor_dir == DIRN_UP && get_current_motor_dir() == DIRN_UP){
+        printf("DERFOR FUNKER DEN ITJ1\n");
         return 1; //true
-    else if (floor != -1 && !orders_below(floor) && motor_dir == DIRN_DOWN)
+    }
+    else if (floor != -1 && !orders_below(floor) && motor_dir == DIRN_DOWN && get_current_motor_dir() == DIRN_DOWN){
+        printf("DERFOR FUNKER DEN ITJ2\n");
         return 1; //true
+    }
     else{
         for (elev_button_type_t button = 0; button < N_BUTTONS; button++){
             if (Orderlist[floor][button].active){
-                return (Orderlist[floor][button].button_type == BUTTON_COMMAND)||
-                    (Orderlist[floor][button].button_type == BUTTON_CALL_UP && motor_dir == DIRN_UP)||
-                    (Orderlist[floor][button].button_type == BUTTON_CALL_DOWN && motor_dir == DIRN_DOWN)||
-                    (floor != -1 && motor_dir == DIRN_STOP);
+                if (Orderlist[floor][button].button_type == BUTTON_COMMAND)
+                    return 1; //true
+                else if (Orderlist[floor][button].button_type == BUTTON_CALL_UP && motor_dir == DIRN_UP)
+                    return 1; //true
+                else if (Orderlist[floor][button].button_type == BUTTON_CALL_DOWN && motor_dir == DIRN_DOWN)
+                    return 1; //true
+                else if (floor != -1 && motor_dir == DIRN_STOP)
+                    return 1; //true
             }
         }
     }
