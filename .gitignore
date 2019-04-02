@@ -46,8 +46,8 @@
 *.vscode
 
 # HTML files
-  *.html
-  softdevice/
+*.html
+softdevice/
 
 # Kernel Module Compile Results
 *.mod*
