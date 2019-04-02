@@ -32,7 +32,9 @@ void state_idle(){
 
 void state_moving(elev_motor_direction_t motor_dir){
   elev_set_door_open_lamp(0);
-  set_last_motor_dir(motor_dir);
+  if (get_current_floor() != -1){
+    set_last_motor_dir(motor_dir);
+  }
   set_current_motor_dir(motor_dir);
   elev_set_motor_direction(get_current_motor_dir());
 }
