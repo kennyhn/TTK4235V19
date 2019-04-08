@@ -29,10 +29,10 @@ int main() {
     while (1) {
         button_poller();
         floor_sensor_poller();
-       
+
         state current_state = next_state();
         switch(current_state){
-            
+
             case STOP_SHAFT:
                 printf("STOP SHAFT\n");
                 state_STOP_shaft();
@@ -48,11 +48,11 @@ int main() {
                 state_idle();
                 break;
             case MOVING:
-                motor_dir = choose_dir();
+                motor_dir = choose_dir(get_current_floor(), get_current_motor_dir());
                 state_moving(motor_dir);
                 break;
         }
     }
-    
+
     return 0;
 }
