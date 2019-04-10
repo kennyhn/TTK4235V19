@@ -32,7 +32,7 @@ void update_floor_lights(int last_floor);
  * @param[in] current_floor Floor wich elevator is at
  * @param[in] curr_motor_dir Direction which elevator is currently driving
  *
- * @return A elev_motor_direction_t which is the new direction for the elevator. 
+ * @return A elev_motor_direction_t which is the new direction for the elevator.
  */
 
 elev_motor_direction_t choose_dir(float current_floor, elev_motor_direction_t curr_motor_dir);
