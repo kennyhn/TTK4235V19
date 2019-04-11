@@ -1,5 +1,10 @@
 \hypertarget{elev__driver_8h}{}\section{source/elev\+\_\+driver.h File Reference}
 \label{elev__driver_8h}\index{source/elev\+\_\+driver.\+h@{source/elev\+\_\+driver.\+h}}
+
+
+Functions that provide an interface to the elevators in the real time lab.  
+
+
 This graph shows which files directly or indirectly include this file\+:
 \nopagebreak
 \begin{figure}[H]
@@ -62,6 +67,11 @@ void \hyperlink{elev__driver_8h_a9e81321c63d80ddf1699bc91593cd9d4}{elev\+\_\+set
 \end{DoxyCompactItemize}
 
 
+\subsection{Detailed Description}
+Functions that provide an interface to the elevators in the real time lab. 
+
+
+
 \subsection{Typedef Documentation}
 \index{elev\+\_\+driver.\+h@{elev\+\_\+driver.\+h}!elev\+\_\+button\+\_\+type\+\_\+t@{elev\+\_\+button\+\_\+type\+\_\+t}}
 \index{elev\+\_\+button\+\_\+type\+\_\+t@{elev\+\_\+button\+\_\+type\+\_\+t}!elev\+\_\+driver.\+h@{elev\+\_\+driver.\+h}}
@@ -77,14 +87,14 @@ Motor direction for function \hyperlink{elev__driver_8c_ac7dccb879f6e812e9d24517
 \subsubsection[{\texorpdfstring{tag\+\_\+elev\+\_\+lamp\+\_\+type}{tag_elev_lamp_type}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf tag\+\_\+elev\+\_\+lamp\+\_\+type}}\hypertarget{elev__driver_8h_a0c3f8374e6ebcc71f91341eb3ba6f6f9}{}\label{elev__driver_8h_a0c3f8374e6ebcc71f91341eb3ba6f6f9}
 Button types for function \hyperlink{elev__driver_8h_a9e81321c63d80ddf1699bc91593cd9d4}{elev\+\_\+set\+\_\+button\+\_\+lamp()} and elev\+\_\+get\+\_\+button(). 
 
-Definition at line 97 of file elev\+\_\+driver.\+h.
+Definition at line 98 of file elev\+\_\+driver.\+h.
 
 \index{elev\+\_\+driver.\+h@{elev\+\_\+driver.\+h}!tag\+\_\+elev\+\_\+motor\+\_\+direction@{tag\+\_\+elev\+\_\+motor\+\_\+direction}}
 \index{tag\+\_\+elev\+\_\+motor\+\_\+direction@{tag\+\_\+elev\+\_\+motor\+\_\+direction}!elev\+\_\+driver.\+h@{elev\+\_\+driver.\+h}}
 \subsubsection[{\texorpdfstring{tag\+\_\+elev\+\_\+motor\+\_\+direction}{tag_elev_motor_direction}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf tag\+\_\+elev\+\_\+motor\+\_\+direction}}\hypertarget{elev__driver_8h_aaf85d173ea1bbd3d99c5a2fcf58cba11}{}\label{elev__driver_8h_aaf85d173ea1bbd3d99c5a2fcf58cba11}
 Motor direction for function \hyperlink{elev__driver_8h_ac7dccb879f6e812e9d245174a0214536}{elev\+\_\+set\+\_\+motor\+\_\+direction()}. 
 
-Definition at line 29 of file elev\+\_\+driver.\+h.
+Definition at line 30 of file elev\+\_\+driver.\+h.
 
 
 
@@ -109,7 +119,7 @@ Gets a button signal.
 \end{DoxyReturn}
 
 
-Definition at line 123 of file elev\+\_\+driver.\+c.
+Definition at line 124 of file elev\+\_\+driver.\+c.
 
 \index{elev\+\_\+driver.\+h@{elev\+\_\+driver.\+h}!elev\+\_\+get\+\_\+floor\+\_\+sensor\+\_\+signal@{elev\+\_\+get\+\_\+floor\+\_\+sensor\+\_\+signal}}
 \index{elev\+\_\+get\+\_\+floor\+\_\+sensor\+\_\+signal@{elev\+\_\+get\+\_\+floor\+\_\+sensor\+\_\+signal}!elev\+\_\+driver.\+h@{elev\+\_\+driver.\+h}}
@@ -123,7 +133,7 @@ Get floor sensor signal. \begin{DoxyReturn}{Returns}
 \end{DoxyReturn}
 
 
-Definition at line 94 of file elev\+\_\+driver.\+c.
+Definition at line 95 of file elev\+\_\+driver.\+c.
 
 \index{elev\+\_\+driver.\+h@{elev\+\_\+driver.\+h}!elev\+\_\+get\+\_\+obstruction\+\_\+signal@{elev\+\_\+get\+\_\+obstruction\+\_\+signal}}
 \index{elev\+\_\+get\+\_\+obstruction\+\_\+signal@{elev\+\_\+get\+\_\+obstruction\+\_\+signal}!elev\+\_\+driver.\+h@{elev\+\_\+driver.\+h}}
@@ -137,7 +147,7 @@ Get signal from obstruction switch. \begin{DoxyReturn}{Returns}
 \end{DoxyReturn}
 
 
-Definition at line 79 of file elev\+\_\+driver.\+c.
+Definition at line 80 of file elev\+\_\+driver.\+c.
 
 \index{elev\+\_\+driver.\+h@{elev\+\_\+driver.\+h}!elev\+\_\+get\+\_\+stop\+\_\+signal@{elev\+\_\+get\+\_\+stop\+\_\+signal}}
 \index{elev\+\_\+get\+\_\+stop\+\_\+signal@{elev\+\_\+get\+\_\+stop\+\_\+signal}!elev\+\_\+driver.\+h@{elev\+\_\+driver.\+h}}
@@ -151,7 +161,7 @@ Get signal from stop button. \begin{DoxyReturn}{Returns}
 \end{DoxyReturn}
 
 
-Definition at line 83 of file elev\+\_\+driver.\+c.
+Definition at line 84 of file elev\+\_\+driver.\+c.
 
 \index{elev\+\_\+driver.\+h@{elev\+\_\+driver.\+h}!elev\+\_\+init@{elev\+\_\+init}}
 \index{elev\+\_\+init@{elev\+\_\+init}!elev\+\_\+driver.\+h@{elev\+\_\+driver.\+h}}
@@ -165,7 +175,7 @@ Non-\/zero on success, 0 on failure.
 \end{DoxyReturn}
 
 
-Definition at line 33 of file elev\+\_\+driver.\+c.
+Definition at line 34 of file elev\+\_\+driver.\+c.
 
 \index{elev\+\_\+driver.\+h@{elev\+\_\+driver.\+h}!elev\+\_\+set\+\_\+button\+\_\+lamp@{elev\+\_\+set\+\_\+button\+\_\+lamp}}
 \index{elev\+\_\+set\+\_\+button\+\_\+lamp@{elev\+\_\+set\+\_\+button\+\_\+lamp}!elev\+\_\+driver.\+h@{elev\+\_\+driver.\+h}}
@@ -187,7 +197,7 @@ Set a button lamp.
 \end{DoxyParams}
 
 
-Definition at line 136 of file elev\+\_\+driver.\+c.
+Definition at line 137 of file elev\+\_\+driver.\+c.
 
 \index{elev\+\_\+driver.\+h@{elev\+\_\+driver.\+h}!elev\+\_\+set\+\_\+door\+\_\+open\+\_\+lamp@{elev\+\_\+set\+\_\+door\+\_\+open\+\_\+lamp}}
 \index{elev\+\_\+set\+\_\+door\+\_\+open\+\_\+lamp@{elev\+\_\+set\+\_\+door\+\_\+open\+\_\+lamp}!elev\+\_\+driver.\+h@{elev\+\_\+driver.\+h}}
@@ -203,7 +213,7 @@ Turn door-\/open lamp on or off.
 \end{DoxyParams}
 
 
-Definition at line 72 of file elev\+\_\+driver.\+c.
+Definition at line 73 of file elev\+\_\+driver.\+c.
 
 \index{elev\+\_\+driver.\+h@{elev\+\_\+driver.\+h}!elev\+\_\+set\+\_\+floor\+\_\+indicator@{elev\+\_\+set\+\_\+floor\+\_\+indicator}}
 \index{elev\+\_\+set\+\_\+floor\+\_\+indicator@{elev\+\_\+set\+\_\+floor\+\_\+indicator}!elev\+\_\+driver.\+h@{elev\+\_\+driver.\+h}}
@@ -219,7 +229,7 @@ Set floor indicator lamp for a given floor.
 \end{DoxyParams}
 
 
-Definition at line 107 of file elev\+\_\+driver.\+c.
+Definition at line 108 of file elev\+\_\+driver.\+c.
 
 \index{elev\+\_\+driver.\+h@{elev\+\_\+driver.\+h}!elev\+\_\+set\+\_\+motor\+\_\+direction@{elev\+\_\+set\+\_\+motor\+\_\+direction}}
 \index{elev\+\_\+set\+\_\+motor\+\_\+direction@{elev\+\_\+set\+\_\+motor\+\_\+direction}!elev\+\_\+driver.\+h@{elev\+\_\+driver.\+h}}
@@ -235,7 +245,7 @@ Sets the motor direction of the elevator.
 \end{DoxyParams}
 
 
-Definition at line 60 of file elev\+\_\+driver.\+c.
+Definition at line 61 of file elev\+\_\+driver.\+c.
 
 \index{elev\+\_\+driver.\+h@{elev\+\_\+driver.\+h}!elev\+\_\+set\+\_\+stop\+\_\+lamp@{elev\+\_\+set\+\_\+stop\+\_\+lamp}}
 \index{elev\+\_\+set\+\_\+stop\+\_\+lamp@{elev\+\_\+set\+\_\+stop\+\_\+lamp}!elev\+\_\+driver.\+h@{elev\+\_\+driver.\+h}}
@@ -251,5 +261,5 @@ Turn stop lamp on or off.
 \end{DoxyParams}
 
 
-Definition at line 87 of file elev\+\_\+driver.\+c.
+Definition at line 88 of file elev\+\_\+driver.\+c.
 

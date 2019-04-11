@@ -1,10 +1,14 @@
 \hypertarget{io_8c}{}\section{source/io.c File Reference}
 \label{io_8c}\index{source/io.\+c@{source/io.\+c}}
+
+
+Functions that provide and interface to lib\+Comedi limited to use in the real time lab.  
+
+
 {\ttfamily \#include \char`\"{}io.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}channels.\+h\char`\"{}}\\*
 {\ttfamily \#include $<$comedilib.\+h$>$}\\*
-Include dependency graph for io.\+c\+:
-\nopagebreak
+Include dependency graph for io.\+c\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -28,6 +32,11 @@ int \hyperlink{io_8c_ab145a5637d2c463dfb5741e1a748dd74}{io\+\_\+read\+\_\+analog
 \end{DoxyCompactItemize}
 
 
+\subsection{Detailed Description}
+Functions that provide and interface to lib\+Comedi limited to use in the real time lab. 
+
+
+
 \subsection{Function Documentation}
 \index{io.\+c@{io.\+c}!io\+\_\+clear\+\_\+bit@{io\+\_\+clear\+\_\+bit}}
 \index{io\+\_\+clear\+\_\+bit@{io\+\_\+clear\+\_\+bit}!io.\+c@{io.\+c}}
@@ -43,7 +52,7 @@ Clears a digital channel bit.
 \end{DoxyParams}
 
 
-Definition at line 47 of file io.\+c.
+Definition at line 48 of file io.\+c.
 
 \index{io.\+c@{io.\+c}!io\+\_\+init@{io\+\_\+init}}
 \index{io\+\_\+init@{io\+\_\+init}!io.\+c@{io.\+c}}
@@ -57,7 +66,7 @@ Non-\/zero on success and 0 on failure
 \end{DoxyReturn}
 
 
-Definition at line 20 of file io.\+c.
+Definition at line 21 of file io.\+c.
 
 \index{io.\+c@{io.\+c}!io\+\_\+read\+\_\+analog@{io\+\_\+read\+\_\+analog}}
 \index{io\+\_\+read\+\_\+analog@{io\+\_\+read\+\_\+analog}!io.\+c@{io.\+c}}
@@ -76,7 +85,7 @@ Value read.
 \end{DoxyReturn}
 
 
-Definition at line 68 of file io.\+c.
+Definition at line 69 of file io.\+c.
 
 \index{io.\+c@{io.\+c}!io\+\_\+read\+\_\+bit@{io\+\_\+read\+\_\+bit}}
 \index{io\+\_\+read\+\_\+bit@{io\+\_\+read\+\_\+bit}!io.\+c@{io.\+c}}
@@ -95,7 +104,7 @@ Value read.
 \end{DoxyReturn}
 
 
-Definition at line 59 of file io.\+c.
+Definition at line 60 of file io.\+c.
 
 \index{io.\+c@{io.\+c}!io\+\_\+set\+\_\+bit@{io\+\_\+set\+\_\+bit}}
 \index{io\+\_\+set\+\_\+bit@{io\+\_\+set\+\_\+bit}!io.\+c@{io.\+c}}
@@ -111,7 +120,7 @@ Sets a digital channel bit.
 \end{DoxyParams}
 
 
-Definition at line 41 of file io.\+c.
+Definition at line 42 of file io.\+c.
 
 \index{io.\+c@{io.\+c}!io\+\_\+write\+\_\+analog@{io\+\_\+write\+\_\+analog}}
 \index{io\+\_\+write\+\_\+analog@{io\+\_\+write\+\_\+analog}!io.\+c@{io.\+c}}
@@ -130,5 +139,5 @@ Writes a value to an analog channel.
 \end{DoxyParams}
 
 
-Definition at line 53 of file io.\+c.
+Definition at line 54 of file io.\+c.
 

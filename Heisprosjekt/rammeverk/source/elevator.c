@@ -1,4 +1,5 @@
 /**@file elevator.c
+*@brief Implementation file for elevator.
 */
 #include "elev_driver.h"
 #include "timer.h"

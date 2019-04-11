@@ -1,4 +1,5 @@
 /**@file main.c
+*@brief The main file for the elevator.
 */
 
 #include "elev_driver.h"

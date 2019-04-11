@@ -1,4 +1,5 @@
 /**@file timer.c
+*@brief Implementation file for timer.
 */
 #include "timer.h"
 #include <stdlib.h>

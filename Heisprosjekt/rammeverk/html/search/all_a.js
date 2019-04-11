@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['update_5fbutton_5flights',['update_button_lights',['../order__manager_8c.html#aed99ef2613ad95a6d5905fa21ca145ef',1,'update_button_lights():&#160;order_manager.c'],['../order__manager_8h.html#aed99ef2613ad95a6d5905fa21ca145ef',1,'update_button_lights():&#160;order_manager.c']]],
-  ['update_5ffloor_5flights',['update_floor_lights',['../controller_8h.html#ac0fbceb0a5659d068173ed56670b5487',1,'controller.c']]]
+  ['tag_5felev_5flamp_5ftype',['tag_elev_lamp_type',['../elev__driver_8h.html#a0c3f8374e6ebcc71f91341eb3ba6f6f9',1,'elev_driver.h']]],
+  ['tag_5felev_5fmotor_5fdirection',['tag_elev_motor_direction',['../elev__driver_8h.html#aaf85d173ea1bbd3d99c5a2fcf58cba11',1,'elev_driver.h']]],
+  ['timer_2ec',['timer.c',['../timer_8c.html',1,'']]],
+  ['timer_2eh',['timer.h',['../timer_8h.html',1,'']]],
+  ['timer_5f3_5fsec',['timer_3_sec',['../timer_8c.html#a9fdfb069b2978e181e0210d27bb600fa',1,'timer_3_sec(time_t door_timer_start):&#160;timer.c'],['../timer_8h.html#a9fdfb069b2978e181e0210d27bb600fa',1,'timer_3_sec(time_t door_timer_start):&#160;timer.c']]]
 ];

@@ -1,4 +1,5 @@
 /**@file io.h
+*@brief Implementation file for io. 
 */
 // Wrapper for libComedi I/O.
 // These functions provide and interface to libComedi limited to use in

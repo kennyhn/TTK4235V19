@@ -1,0 +1,75 @@
+\hypertarget{timer_8c}{}\section{source/timer.c File Reference}
+\label{timer_8c}\index{source/timer.\+c@{source/timer.\+c}}
+
+
+Implementation file for timer.  
+
+
+{\ttfamily \#include \char`\"{}timer.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$time.\+h$>$}\\*
+Include dependency graph for timer.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{timer_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{timer_8c_a79cc1ad22cdc0416107de8e2ceb0d1aa}{start\+\_\+timer} (time\+\_\+t $\ast$current\+\_\+time)
+\begin{DoxyCompactList}\small\item\em Starts a timer from {\ttfamily current} time. \end{DoxyCompactList}\item 
+int \hyperlink{timer_8c_a9fdfb069b2978e181e0210d27bb600fa}{timer\+\_\+3\+\_\+sec} (time\+\_\+t door\+\_\+timer\+\_\+start)
+\begin{DoxyCompactList}\small\item\em Counts 3 seconds from . \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementation file for timer. 
+
+
+
+\subsection{Function Documentation}
+\index{timer.\+c@{timer.\+c}!start\+\_\+timer@{start\+\_\+timer}}
+\index{start\+\_\+timer@{start\+\_\+timer}!timer.\+c@{timer.\+c}}
+\subsubsection[{\texorpdfstring{start\+\_\+timer(time\+\_\+t $\ast$current\+\_\+time)}{start_timer(time_t *current_time)}}]{\setlength{\rightskip}{0pt plus 5cm}void start\+\_\+timer (
+\begin{DoxyParamCaption}
+\item[{time\+\_\+t $\ast$}]{current\+\_\+time}
+\end{DoxyParamCaption}
+)}\hypertarget{timer_8c_a79cc1ad22cdc0416107de8e2ceb0d1aa}{}\label{timer_8c_a79cc1ad22cdc0416107de8e2ceb0d1aa}
+
+
+Starts a timer from {\ttfamily current} time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+\_\+time} & The current time. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 8 of file timer.\+c.
+
+\index{timer.\+c@{timer.\+c}!timer\+\_\+3\+\_\+sec@{timer\+\_\+3\+\_\+sec}}
+\index{timer\+\_\+3\+\_\+sec@{timer\+\_\+3\+\_\+sec}!timer.\+c@{timer.\+c}}
+\subsubsection[{\texorpdfstring{timer\+\_\+3\+\_\+sec(time\+\_\+t door\+\_\+timer\+\_\+start)}{timer_3_sec(time_t door_timer_start)}}]{\setlength{\rightskip}{0pt plus 5cm}int timer\+\_\+3\+\_\+sec (
+\begin{DoxyParamCaption}
+\item[{time\+\_\+t}]{door\+\_\+timer\+\_\+start}
+\end{DoxyParamCaption}
+)}\hypertarget{timer_8c_a9fdfb069b2978e181e0210d27bb600fa}{}\label{timer_8c_a9fdfb069b2978e181e0210d27bb600fa}
+
+
+Counts 3 seconds from . 
+
+
+\begin{DoxyParams}{Parameters}
+{\em door\+\_\+timer\+\_\+start} & The start of the timer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return 0 if it has been 3 seconds from door\+\_\+timer\+\_\+start, 1 if not. 
+\end{DoxyReturn}
+
+
+Definition at line 13 of file timer.\+c.
+

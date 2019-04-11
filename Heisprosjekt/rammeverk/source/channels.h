@@ -1,4 +1,5 @@
 /**@file channels.h
+*@brief Channel definitions for elevator control using LibComedi.
 */
 
 // Channel definitions for elevator control using LibComedi

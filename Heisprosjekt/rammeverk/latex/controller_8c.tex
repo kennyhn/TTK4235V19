@@ -1,0 +1,126 @@
+\hypertarget{controller_8c}{}\section{source/controller.c File Reference}
+\label{controller_8c}\index{source/controller.\+c@{source/controller.\+c}}
+
+
+Implementation file for controller.  
+
+
+{\ttfamily \#include \char`\"{}controller.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}elevator.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}order\+\_\+manager.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}time.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+Include dependency graph for controller.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{controller_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+state \hyperlink{controller_8c_a8e4d0ac3807643ff16f19831fec588e4}{next\+\_\+state} ()
+\begin{DoxyCompactList}\small\item\em Finds the next state for the elevator. \end{DoxyCompactList}\item 
+\hyperlink{elev__driver_8h_a2256dfd58fecce253106f83fd2ed607f}{elev\+\_\+motor\+\_\+direction\+\_\+t} \hyperlink{controller_8c_aeea5374cacd9bc0f1dd4579bd6cb0f46}{choose\+\_\+dir} ()
+\begin{DoxyCompactList}\small\item\em Chooses which direction the elevator should drive next. \end{DoxyCompactList}\item 
+void \hyperlink{controller_8c_a9a16f6b98f5f76be46fe27e82bba227b}{floor\+\_\+sensor\+\_\+poller} ()
+\begin{DoxyCompactList}\small\item\em Checks floor sensor and sets the elevators current floor. If the elevator is at a floor, last floor is set and floor lights are updated. \end{DoxyCompactList}\item 
+void \hyperlink{controller_8c_a57ae9c150db7661cef241d5e6001590f}{button\+\_\+poller} ()
+\begin{DoxyCompactList}\small\item\em Checks if any buttons is pressed, and if so, adds the corresponding order to the orderlist. \end{DoxyCompactList}\item 
+void \hyperlink{controller_8c_ac0fbceb0a5659d068173ed56670b5487}{update\+\_\+floor\+\_\+lights} (int last\+\_\+floor)
+\begin{DoxyCompactList}\small\item\em Sets floor lights at . \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementation file for controller. 
+
+
+
+\subsection{Function Documentation}
+\index{controller.\+c@{controller.\+c}!button\+\_\+poller@{button\+\_\+poller}}
+\index{button\+\_\+poller@{button\+\_\+poller}!controller.\+c@{controller.\+c}}
+\subsubsection[{\texorpdfstring{button\+\_\+poller()}{button_poller()}}]{\setlength{\rightskip}{0pt plus 5cm}void button\+\_\+poller (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{controller_8c_a57ae9c150db7661cef241d5e6001590f}{}\label{controller_8c_a57ae9c150db7661cef241d5e6001590f}
+
+
+Checks if any buttons is pressed, and if so, adds the corresponding order to the orderlist. 
+
+
+
+Definition at line 71 of file controller.\+c.
+
+\index{controller.\+c@{controller.\+c}!choose\+\_\+dir@{choose\+\_\+dir}}
+\index{choose\+\_\+dir@{choose\+\_\+dir}!controller.\+c@{controller.\+c}}
+\subsubsection[{\texorpdfstring{choose\+\_\+dir()}{choose_dir()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf elev\+\_\+motor\+\_\+direction\+\_\+t} choose\+\_\+dir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{controller_8c_aeea5374cacd9bc0f1dd4579bd6cb0f46}{}\label{controller_8c_aeea5374cacd9bc0f1dd4579bd6cb0f46}
+
+
+Chooses which direction the elevator should drive next. 
+
+\begin{DoxyReturn}{Returns}
+New direction for the elevator. 
+\end{DoxyReturn}
+
+
+Definition at line 27 of file controller.\+c.
+
+\index{controller.\+c@{controller.\+c}!floor\+\_\+sensor\+\_\+poller@{floor\+\_\+sensor\+\_\+poller}}
+\index{floor\+\_\+sensor\+\_\+poller@{floor\+\_\+sensor\+\_\+poller}!controller.\+c@{controller.\+c}}
+\subsubsection[{\texorpdfstring{floor\+\_\+sensor\+\_\+poller()}{floor_sensor_poller()}}]{\setlength{\rightskip}{0pt plus 5cm}void floor\+\_\+sensor\+\_\+poller (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{controller_8c_a9a16f6b98f5f76be46fe27e82bba227b}{}\label{controller_8c_a9a16f6b98f5f76be46fe27e82bba227b}
+
+
+Checks floor sensor and sets the elevators current floor. If the elevator is at a floor, last floor is set and floor lights are updated. 
+
+
+
+Definition at line 62 of file controller.\+c.
+
+\index{controller.\+c@{controller.\+c}!next\+\_\+state@{next\+\_\+state}}
+\index{next\+\_\+state@{next\+\_\+state}!controller.\+c@{controller.\+c}}
+\subsubsection[{\texorpdfstring{next\+\_\+state()}{next_state()}}]{\setlength{\rightskip}{0pt plus 5cm}state next\+\_\+state (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{controller_8c_a8e4d0ac3807643ff16f19831fec588e4}{}\label{controller_8c_a8e4d0ac3807643ff16f19831fec588e4}
+
+
+Finds the next state for the elevator. 
+
+\begin{DoxyReturn}{Returns}
+Next state for the elevator. Returns -\/1 if no valid state. 
+\end{DoxyReturn}
+
+
+Definition at line 11 of file controller.\+c.
+
+\index{controller.\+c@{controller.\+c}!update\+\_\+floor\+\_\+lights@{update\+\_\+floor\+\_\+lights}}
+\index{update\+\_\+floor\+\_\+lights@{update\+\_\+floor\+\_\+lights}!controller.\+c@{controller.\+c}}
+\subsubsection[{\texorpdfstring{update\+\_\+floor\+\_\+lights(int last\+\_\+floor)}{update_floor_lights(int last_floor)}}]{\setlength{\rightskip}{0pt plus 5cm}void update\+\_\+floor\+\_\+lights (
+\begin{DoxyParamCaption}
+\item[{int}]{last\+\_\+floor}
+\end{DoxyParamCaption}
+)}\hypertarget{controller_8c_ac0fbceb0a5659d068173ed56670b5487}{}\label{controller_8c_ac0fbceb0a5659d068173ed56670b5487}
+
+
+Sets floor lights at . 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em last\+\_\+floor} & The floor where the sensor was last indicated. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 84 of file controller.\+c.
+

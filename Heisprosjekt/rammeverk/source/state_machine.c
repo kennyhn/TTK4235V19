@@ -1,4 +1,5 @@
 /**@file state_machine.c
+*@brief Implementation file for state machine.
 */
 #include "state_machine.h"
 #include "elevator.h"

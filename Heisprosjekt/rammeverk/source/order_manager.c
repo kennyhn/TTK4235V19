@@ -1,4 +1,5 @@
 /**@file order_manager.c
+*@brief Implementation file for order manager.
 */
 #include "order_manager.h"
 #include "elev_driver.h"

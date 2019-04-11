@@ -1,5 +1,5 @@
 /**@file state_machine.h
- * @brief Functions for the state of the elevatormake break
+ * @brief Functions for the state of the elevator.
  */
 
 #ifndef __STATE_MACHINE_H__
@@ -41,7 +41,7 @@ void state_door_open();
 void state_STOP_shaft();
 
 /**
- * @brief Delete all orders and stops the elevator as long as the STOP button is pressed at a floor. 
+ * @brief Delete all orders and stops the elevator as long as the STOP button is pressed at a floor.
  */
 
 void state_STOP_floor();

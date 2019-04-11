@@ -1,4 +1,5 @@
 /**@file controller.c
+*@brief Implementation file for controller.
 */
 #include "controller.h"
 #include "elevator.h"

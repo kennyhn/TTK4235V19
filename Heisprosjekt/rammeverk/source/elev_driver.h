@@ -1,4 +1,5 @@
 /**@file elev_driver.h
+*@brief Functions that provide an interface to the elevators in the real time lab.
 */
 // Wrapper for libComedi Elevator control.
 // These functions provides an interface to the elevators in the real time lab

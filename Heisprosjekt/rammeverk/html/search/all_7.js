@@ -1,8 +1,4 @@
 var searchData=
 [
-  ['order',['Order',['../structOrder.html',1,'Order'],['../order__manager_8h.html#a88b083f4969e7c61a34a7231180f9e41',1,'order():&#160;order_manager.h']]],
-  ['order_5fmanager_2ec',['order_manager.c',['../order__manager_8c.html',1,'']]],
-  ['order_5fmanager_2eh',['order_manager.h',['../order__manager_8h.html',1,'']]],
-  ['orders_5fabove',['orders_above',['../order__manager_8c.html#aead0bede1788c3c3050dc49a7e191382',1,'orders_above(int current_floor):&#160;order_manager.c'],['../order__manager_8h.html#aead0bede1788c3c3050dc49a7e191382',1,'orders_above(int current_floor):&#160;order_manager.c']]],
-  ['orders_5fbelow',['orders_below',['../order__manager_8c.html#a704d50341b06a68154a6e4bcdf950c31',1,'orders_below(int current_floor):&#160;order_manager.c'],['../order__manager_8h.html#a704d50341b06a68154a6e4bcdf950c31',1,'orders_below(int current_floor):&#160;order_manager.c']]]
+  ['next_5fstate',['next_state',['../controller_8c.html#a8e4d0ac3807643ff16f19831fec588e4',1,'next_state():&#160;controller.c'],['../controller_8h.html#a8e4d0ac3807643ff16f19831fec588e4',1,'next_state():&#160;controller.c']]]
 ];

@@ -1,5 +1,5 @@
 /**@file elevator.h
- * @brief Functions for geting and seting the elevators floor and motor direction.
+ * @brief Functions for getting and setting the elevators floor and motor direction.
  */
 
 #ifndef __ELEVATOR_H__

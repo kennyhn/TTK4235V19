@@ -1,5 +1,5 @@
 /**@file timer.h
- * @brief Functions for controlling the timer.
+ * @brief Functions for controlling the door timer.
  */
 
 #ifndef __TIMER_H__

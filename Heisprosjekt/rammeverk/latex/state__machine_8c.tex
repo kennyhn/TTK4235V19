@@ -1,0 +1,69 @@
+\hypertarget{state__machine_8c}{}\section{source/state\+\_\+machine.c File Reference}
+\label{state__machine_8c}\index{source/state\+\_\+machine.\+c@{source/state\+\_\+machine.\+c}}
+
+
+Implementation file for state machine.  
+
+
+{\ttfamily \#include \char`\"{}state\+\_\+machine.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}elevator.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}elev\+\_\+driver.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}order\+\_\+manager.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}controller.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}timer.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$time.\+h$>$}\\*
+Include dependency graph for state\+\_\+machine.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{state__machine_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{state__machine_8c_afcf4a6ddff16950f5c2792c5663ec1d7}{state\+\_\+init} ()\hypertarget{state__machine_8c_afcf4a6ddff16950f5c2792c5663ec1d7}{}\label{state__machine_8c_afcf4a6ddff16950f5c2792c5663ec1d7}
+
+\begin{DoxyCompactList}\small\item\em Intialize the elevator. \end{DoxyCompactList}\item 
+void \hyperlink{state__machine_8c_a2f042a2a46386e05be3f891b941edddd}{state\+\_\+idle} ()\hypertarget{state__machine_8c_a2f042a2a46386e05be3f891b941edddd}{}\label{state__machine_8c_a2f042a2a46386e05be3f891b941edddd}
+
+\begin{DoxyCompactList}\small\item\em Sets elevator to idle. \end{DoxyCompactList}\item 
+void \hyperlink{state__machine_8c_ad122f82004fadb7162d1cd98e5ffc56c}{state\+\_\+moving} (\hyperlink{elev__driver_8h_a2256dfd58fecce253106f83fd2ed607f}{elev\+\_\+motor\+\_\+direction\+\_\+t} motor\+\_\+dir)
+\begin{DoxyCompactList}\small\item\em Sets elevator to move in the direction {\ttfamily motor\+\_\+dir}. \end{DoxyCompactList}\item 
+void \hyperlink{state__machine_8c_aef17ceeb420a4561c8714017cd3736d7}{state\+\_\+door\+\_\+open} ()\hypertarget{state__machine_8c_aef17ceeb420a4561c8714017cd3736d7}{}\label{state__machine_8c_aef17ceeb420a4561c8714017cd3736d7}
+
+\begin{DoxyCompactList}\small\item\em Opens door and holds door for 3 sec. Clear all orders at floor. \end{DoxyCompactList}\item 
+void \hyperlink{state__machine_8c_ace18059c9fdd5bd26b0846e7ee378656}{state\+\_\+\+S\+T\+O\+P\+\_\+shaft} ()\hypertarget{state__machine_8c_ace18059c9fdd5bd26b0846e7ee378656}{}\label{state__machine_8c_ace18059c9fdd5bd26b0846e7ee378656}
+
+\begin{DoxyCompactList}\small\item\em Delete all orders and stops the elevator as long as the S\+T\+OP button is pressed between floors. \end{DoxyCompactList}\item 
+void \hyperlink{state__machine_8c_a5d4de83655939e40d9268ba84bf14dac}{state\+\_\+\+S\+T\+O\+P\+\_\+floor} ()\hypertarget{state__machine_8c_a5d4de83655939e40d9268ba84bf14dac}{}\label{state__machine_8c_a5d4de83655939e40d9268ba84bf14dac}
+
+\begin{DoxyCompactList}\small\item\em Delete all orders and stops the elevator as long as the S\+T\+OP button is pressed at a floor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementation file for state machine. 
+
+
+
+\subsection{Function Documentation}
+\index{state\+\_\+machine.\+c@{state\+\_\+machine.\+c}!state\+\_\+moving@{state\+\_\+moving}}
+\index{state\+\_\+moving@{state\+\_\+moving}!state\+\_\+machine.\+c@{state\+\_\+machine.\+c}}
+\subsubsection[{\texorpdfstring{state\+\_\+moving(elev\+\_\+motor\+\_\+direction\+\_\+t motor\+\_\+dir)}{state_moving(elev_motor_direction_t motor_dir)}}]{\setlength{\rightskip}{0pt plus 5cm}void state\+\_\+moving (
+\begin{DoxyParamCaption}
+\item[{{\bf elev\+\_\+motor\+\_\+direction\+\_\+t}}]{motor\+\_\+dir}
+\end{DoxyParamCaption}
+)}\hypertarget{state__machine_8c_ad122f82004fadb7162d1cd98e5ffc56c}{}\label{state__machine_8c_ad122f82004fadb7162d1cd98e5ffc56c}
+
+
+Sets elevator to move in the direction {\ttfamily motor\+\_\+dir}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em motor\+\_\+dir} & The direction the elevator should move. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 36 of file state\+\_\+machine.\+c.
+
