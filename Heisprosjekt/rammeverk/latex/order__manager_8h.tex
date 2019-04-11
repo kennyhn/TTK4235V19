@@ -13,8 +13,7 @@ Include dependency graph for order\+\_\+manager.\+h\+:\nopagebreak
 \includegraphics[width=202pt]{order__manager_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:
-\nopagebreak
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -45,7 +44,7 @@ void \hyperlink{order__manager_8h_ac402b78b33fb15a5593ba68dbb320fe6}{clear\+\_\+
 void \hyperlink{order__manager_8h_ad8979de5df4ed8a898d1b837b540c22d}{set\+\_\+order} (int floor, \hyperlink{elev__driver_8h_af61c4136fb437a2c49037e5a57c9abda}{elev\+\_\+button\+\_\+type\+\_\+t} button\+\_\+type)
 \begin{DoxyCompactList}\small\item\em Sets an order to active and updates order lights. \end{DoxyCompactList}\item 
 \hyperlink{order__manager_8h_a88b083f4969e7c61a34a7231180f9e41}{order} \hyperlink{order__manager_8h_a420ca28e5032b3230bafbbf100fba504}{get\+\_\+order} (int floor, \hyperlink{elev__driver_8h_af61c4136fb437a2c49037e5a57c9abda}{elev\+\_\+button\+\_\+type\+\_\+t} button\+\_\+type)
-\begin{DoxyCompactList}\small\item\em Gets order given by {\ttfamily floor} and . \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Gets order given by {\ttfamily floor} and {\ttfamily button\+\_\+type}. \end{DoxyCompactList}\item 
 int \hyperlink{order__manager_8h_aead0bede1788c3c3050dc49a7e191382}{orders\+\_\+above} (int current\+\_\+floor)
 \begin{DoxyCompactList}\small\item\em Checks if it is any orders above {\ttfamily current\+\_\+floor}. \end{DoxyCompactList}\item 
 int \hyperlink{order__manager_8h_a704d50341b06a68154a6e4bcdf950c31}{orders\+\_\+below} (int current\+\_\+floor)
@@ -89,7 +88,7 @@ Sets all orders at {\ttfamily floor} to inactive and updates button lights.
 \end{DoxyParams}
 
 
-Definition at line 28 of file order\+\_\+manager.\+c.
+Definition at line 31 of file order\+\_\+manager.\+c.
 
 \index{order\+\_\+manager.\+h@{order\+\_\+manager.\+h}!get\+\_\+order@{get\+\_\+order}}
 \index{get\+\_\+order@{get\+\_\+order}!order\+\_\+manager.\+h@{order\+\_\+manager.\+h}}
@@ -101,7 +100,7 @@ Definition at line 28 of file order\+\_\+manager.\+c.
 )}\hypertarget{order__manager_8h_a420ca28e5032b3230bafbbf100fba504}{}\label{order__manager_8h_a420ca28e5032b3230bafbbf100fba504}
 
 
-Gets order given by {\ttfamily floor} and . 
+Gets order given by {\ttfamily floor} and {\ttfamily button\+\_\+type}. 
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -115,7 +114,7 @@ The order at the place in Orderlist given by the parameters.
 \end{DoxyReturn}
 
 
-Definition at line 47 of file order\+\_\+manager.\+c.
+Definition at line 50 of file order\+\_\+manager.\+c.
 
 \index{order\+\_\+manager.\+h@{order\+\_\+manager.\+h}!is\+\_\+active\+\_\+orders@{is\+\_\+active\+\_\+orders}}
 \index{is\+\_\+active\+\_\+orders@{is\+\_\+active\+\_\+orders}!order\+\_\+manager.\+h@{order\+\_\+manager.\+h}}
@@ -133,7 +132,7 @@ Goes through the Orderlist and checks if it is any active orders.
 \end{DoxyReturn}
 
 
-Definition at line 73 of file order\+\_\+manager.\+c.
+Definition at line 76 of file order\+\_\+manager.\+c.
 
 \index{order\+\_\+manager.\+h@{order\+\_\+manager.\+h}!is\+\_\+order\+\_\+at\+\_\+floor@{is\+\_\+order\+\_\+at\+\_\+floor}}
 \index{is\+\_\+order\+\_\+at\+\_\+floor@{is\+\_\+order\+\_\+at\+\_\+floor}!order\+\_\+manager.\+h@{order\+\_\+manager.\+h}}
@@ -155,11 +154,11 @@ Checks if an order is at a given floor and if the elevator should stop. The elev
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-1 if it is order at floor and the elevator should stop, 0 if not. 
+1 if order at floor and the elevator should stop, 0 if not. 
 \end{DoxyReturn}
 
 
-Definition at line 85 of file order\+\_\+manager.\+c.
+Definition at line 88 of file order\+\_\+manager.\+c.
 
 \index{order\+\_\+manager.\+h@{order\+\_\+manager.\+h}!orders\+\_\+above@{orders\+\_\+above}}
 \index{orders\+\_\+above@{orders\+\_\+above}!order\+\_\+manager.\+h@{order\+\_\+manager.\+h}}
@@ -182,7 +181,7 @@ Checks if it is any orders above {\ttfamily current\+\_\+floor}.
 \end{DoxyReturn}
 
 
-Definition at line 51 of file order\+\_\+manager.\+c.
+Definition at line 54 of file order\+\_\+manager.\+c.
 
 \index{order\+\_\+manager.\+h@{order\+\_\+manager.\+h}!orders\+\_\+below@{orders\+\_\+below}}
 \index{orders\+\_\+below@{orders\+\_\+below}!order\+\_\+manager.\+h@{order\+\_\+manager.\+h}}
@@ -205,7 +204,7 @@ Checks if it is any orders below {\ttfamily current\+\_\+floor}.
 \end{DoxyReturn}
 
 
-Definition at line 63 of file order\+\_\+manager.\+c.
+Definition at line 66 of file order\+\_\+manager.\+c.
 
 \index{order\+\_\+manager.\+h@{order\+\_\+manager.\+h}!set\+\_\+order@{set\+\_\+order}}
 \index{set\+\_\+order@{set\+\_\+order}!order\+\_\+manager.\+h@{order\+\_\+manager.\+h}}
@@ -228,5 +227,5 @@ Sets an order to active and updates order lights.
 \end{DoxyParams}
 
 
-Definition at line 34 of file order\+\_\+manager.\+c.
+Definition at line 37 of file order\+\_\+manager.\+c.
 

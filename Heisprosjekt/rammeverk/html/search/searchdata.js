@@ -4,8 +4,9 @@ var indexSectionsWithContent =
   1: "eo",
   2: "ceimost",
   3: "bcefginostu",
-  4: "eo",
-  5: "t"
+  4: "o",
+  5: "eo",
+  6: "t"
 };
 
 var indexSectionNames =
@@ -14,8 +15,9 @@ var indexSectionNames =
   1: "classes",
   2: "files",
   3: "functions",
-  4: "typedefs",
-  5: "enums"
+  4: "variables",
+  5: "typedefs",
+  6: "enums"
 };
 
 var indexSectionLabels =
@@ -24,7 +26,8 @@ var indexSectionLabels =
   1: "Data Structures",
   2: "Files",
   3: "Functions",
-  4: "Typedefs",
-  5: "Enumerations"
+  4: "Variables",
+  5: "Typedefs",
+  6: "Enumerations"
 };
 

@@ -37,7 +37,7 @@ void floor_sensor_poller();
 
 void button_poller();
 
-/**@brief Sets floor lights at @last_floor.
+/**@brief Sets floor lights at @p last_floor.
 
  * @param[in] last_floor The floor where the sensor was last indicated.
  */

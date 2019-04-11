@@ -53,14 +53,14 @@ elev_motor_direction_t get_last_motor_dir();
 /**
  * @brief Gets the last floor the elevator has been at.
  *
- * @return last floor
+ * @return Last floor
  */
 int get_last_floor();
 
 /**
  * @brief Gets which floor the elevator is at.
  *
- * @return current floor if elevator at floor. -1 if between two floors.
+ * @return Current floor if elevator at floor. -1 if between two floors.
  */
 int get_current_floor();
 

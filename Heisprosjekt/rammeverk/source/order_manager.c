@@ -6,6 +6,9 @@
 #include "elevator.h"
 #include <stdio.h>
 
+/**
+* List of all orders.
+*/
 order Orderlist[N_FLOORS][N_BUTTONS];
 
 void init_orderlist(){

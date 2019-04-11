@@ -47,7 +47,7 @@ void clear_all_orders_at_floor(int floor);
 void set_order(int floor, elev_button_type_t button_type);
 
 /**
- * @brief Gets order given by @p floor and @button_type.
+ * @brief Gets order given by @p floor and @p button_type.
  *
  * @param[in] floor At which floor we want the order from.
  * @param[in] button_type If we want the order for UP, DOWN or COMMAND.
@@ -92,7 +92,7 @@ int is_active_orders();
  * @param[in] floor The floor we want to check if it is any orders at.
  * @param[in] motor_dir Motor direction of the elevator
  *
- * @return 1 if it is order at floor and the elevator should stop, 0 if not.
+ * @return 1 if order at floor and the elevator should stop, 0 if not.
  */
 
 int is_order_at_floor(int floor, elev_motor_direction_t motor_dir);

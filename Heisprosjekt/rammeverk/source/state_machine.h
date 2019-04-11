@@ -29,7 +29,7 @@ void state_idle();
 void state_moving(elev_motor_direction_t motor_dir);
 
 /**
- * @brief Opens door and holds door for 3 sec. Clear all orders at floor.
+ * @brief Sets state to door open. Open door for 3 seconds and delete all orders at floor.
  */
 
 void state_door_open();
