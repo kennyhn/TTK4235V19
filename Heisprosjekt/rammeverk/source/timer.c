@@ -1,3 +1,5 @@
+/**@file timer.c
+*/
 #include "timer.h"
 #include <stdlib.h>
 #include <time.h>

@@ -1,0 +1,208 @@
+\hypertarget{order__manager_8c}{}\section{source/order\+\_\+manager.c File Reference}
+\label{order__manager_8c}\index{source/order\+\_\+manager.\+c@{source/order\+\_\+manager.\+c}}
+{\ttfamily \#include \char`\"{}order\+\_\+manager.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}elev\+\_\+driver.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}elevator.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+Include dependency graph for order\+\_\+manager.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{order__manager_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{order__manager_8c_a8adafbbff4884372d6ffdd1ed7c60fa9}{init\+\_\+orderlist} ()\hypertarget{order__manager_8c_a8adafbbff4884372d6ffdd1ed7c60fa9}{}\label{order__manager_8c_a8adafbbff4884372d6ffdd1ed7c60fa9}
+
+\begin{DoxyCompactList}\small\item\em Intialize a list of orders and sets all orders to be inactive. \end{DoxyCompactList}\item 
+void \hyperlink{order__manager_8c_a6206e5203639ca23d84820e2ffb108a3}{clear\+\_\+all\+\_\+orders} ()\hypertarget{order__manager_8c_a6206e5203639ca23d84820e2ffb108a3}{}\label{order__manager_8c_a6206e5203639ca23d84820e2ffb108a3}
+
+\begin{DoxyCompactList}\small\item\em Sets all orders to be inactive. \end{DoxyCompactList}\item 
+void \hyperlink{order__manager_8c_ac402b78b33fb15a5593ba68dbb320fe6}{clear\+\_\+all\+\_\+orders\+\_\+at\+\_\+floor} (int floor)
+\begin{DoxyCompactList}\small\item\em Sets all orders at {\ttfamily floor} to inactive and updates button lights. \end{DoxyCompactList}\item 
+void \hyperlink{order__manager_8c_ad8979de5df4ed8a898d1b837b540c22d}{set\+\_\+order} (int floor, \hyperlink{elev__driver_8h_af61c4136fb437a2c49037e5a57c9abda}{elev\+\_\+button\+\_\+type\+\_\+t} button\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Sets an order to active and updates order lights. \end{DoxyCompactList}\item 
+\hyperlink{order__manager_8h_a88b083f4969e7c61a34a7231180f9e41}{order} \hyperlink{order__manager_8c_a420ca28e5032b3230bafbbf100fba504}{get\+\_\+order} (int floor, \hyperlink{elev__driver_8h_af61c4136fb437a2c49037e5a57c9abda}{elev\+\_\+button\+\_\+type\+\_\+t} button\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Gets order given by {\ttfamily floor} and . \end{DoxyCompactList}\item 
+int \hyperlink{order__manager_8c_aead0bede1788c3c3050dc49a7e191382}{orders\+\_\+above} (int current\+\_\+floor)
+\begin{DoxyCompactList}\small\item\em Checks if it is any orders above {\ttfamily current\+\_\+floor}. \end{DoxyCompactList}\item 
+int \hyperlink{order__manager_8c_a704d50341b06a68154a6e4bcdf950c31}{orders\+\_\+below} (int current\+\_\+floor)
+\begin{DoxyCompactList}\small\item\em Checks if it is any orders below {\ttfamily current\+\_\+floor}. \end{DoxyCompactList}\item 
+int \hyperlink{order__manager_8c_acd80fbd88c2b6735f067f5fc564e3201}{is\+\_\+active\+\_\+orders} ()
+\begin{DoxyCompactList}\small\item\em Goes through the Orderlist and checks if it is any active orders. \end{DoxyCompactList}\item 
+int \hyperlink{order__manager_8c_ae574e8525583cfbb6adc9e7f32548d1c}{is\+\_\+order\+\_\+at\+\_\+floor} (int floor, \hyperlink{elev__driver_8h_a2256dfd58fecce253106f83fd2ed607f}{elev\+\_\+motor\+\_\+direction\+\_\+t} motor\+\_\+dir)
+\begin{DoxyCompactList}\small\item\em Checks if an order is at a given floor and if the elevator should stop. The elevator should only stop if the elevator\textquotesingle{}s motor direction and order is in the same direction. \end{DoxyCompactList}\item 
+void \hyperlink{order__manager_8c_aed99ef2613ad95a6d5905fa21ca145ef}{update\+\_\+button\+\_\+lights} ()\hypertarget{order__manager_8c_aed99ef2613ad95a6d5905fa21ca145ef}{}\label{order__manager_8c_aed99ef2613ad95a6d5905fa21ca145ef}
+
+\begin{DoxyCompactList}\small\item\em Updates button lights. Turns off lights if order at floor is completed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{order__manager_8h_a88b083f4969e7c61a34a7231180f9e41}{order} {\bfseries Orderlist} \mbox{[}N\+\_\+\+F\+L\+O\+O\+RS\mbox{]}\mbox{[}N\+\_\+\+B\+U\+T\+T\+O\+NS\mbox{]}\hypertarget{order__manager_8c_aa132bb6c8c37af1662af4632dcda435a}{}\label{order__manager_8c_aa132bb6c8c37af1662af4632dcda435a}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{order\+\_\+manager.\+c@{order\+\_\+manager.\+c}!clear\+\_\+all\+\_\+orders\+\_\+at\+\_\+floor@{clear\+\_\+all\+\_\+orders\+\_\+at\+\_\+floor}}
+\index{clear\+\_\+all\+\_\+orders\+\_\+at\+\_\+floor@{clear\+\_\+all\+\_\+orders\+\_\+at\+\_\+floor}!order\+\_\+manager.\+c@{order\+\_\+manager.\+c}}
+\subsubsection[{\texorpdfstring{clear\+\_\+all\+\_\+orders\+\_\+at\+\_\+floor(int floor)}{clear_all_orders_at_floor(int floor)}}]{\setlength{\rightskip}{0pt plus 5cm}void clear\+\_\+all\+\_\+orders\+\_\+at\+\_\+floor (
+\begin{DoxyParamCaption}
+\item[{int}]{floor}
+\end{DoxyParamCaption}
+)}\hypertarget{order__manager_8c_ac402b78b33fb15a5593ba68dbb320fe6}{}\label{order__manager_8c_ac402b78b33fb15a5593ba68dbb320fe6}
+
+
+Sets all orders at {\ttfamily floor} to inactive and updates button lights. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em floor} & The floor you want to clear all orders at. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 27 of file order\+\_\+manager.\+c.
+
+\index{order\+\_\+manager.\+c@{order\+\_\+manager.\+c}!get\+\_\+order@{get\+\_\+order}}
+\index{get\+\_\+order@{get\+\_\+order}!order\+\_\+manager.\+c@{order\+\_\+manager.\+c}}
+\subsubsection[{\texorpdfstring{get\+\_\+order(int floor, elev\+\_\+button\+\_\+type\+\_\+t button\+\_\+type)}{get_order(int floor, elev_button_type_t button_type)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf order} get\+\_\+order (
+\begin{DoxyParamCaption}
+\item[{int}]{floor, }
+\item[{{\bf elev\+\_\+button\+\_\+type\+\_\+t}}]{button\+\_\+type}
+\end{DoxyParamCaption}
+)}\hypertarget{order__manager_8c_a420ca28e5032b3230bafbbf100fba504}{}\label{order__manager_8c_a420ca28e5032b3230bafbbf100fba504}
+
+
+Gets order given by {\ttfamily floor} and . 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em floor} & At which floor we want the order from. \\
+\hline
+\mbox{\tt in}  & {\em button\+\_\+type} & If we want the order for UP, D\+O\+WN or C\+O\+M\+M\+A\+ND.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The order at the place in Orderlist given by the parameters. 
+\end{DoxyReturn}
+
+
+Definition at line 46 of file order\+\_\+manager.\+c.
+
+\index{order\+\_\+manager.\+c@{order\+\_\+manager.\+c}!is\+\_\+active\+\_\+orders@{is\+\_\+active\+\_\+orders}}
+\index{is\+\_\+active\+\_\+orders@{is\+\_\+active\+\_\+orders}!order\+\_\+manager.\+c@{order\+\_\+manager.\+c}}
+\subsubsection[{\texorpdfstring{is\+\_\+active\+\_\+orders()}{is_active_orders()}}]{\setlength{\rightskip}{0pt plus 5cm}int is\+\_\+active\+\_\+orders (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{order__manager_8c_acd80fbd88c2b6735f067f5fc564e3201}{}\label{order__manager_8c_acd80fbd88c2b6735f067f5fc564e3201}
+
+
+Goes through the Orderlist and checks if it is any active orders. 
+
+\begin{DoxyReturn}{Returns}
+1 if any active orders, 0 if not. 
+\end{DoxyReturn}
+
+
+Definition at line 72 of file order\+\_\+manager.\+c.
+
+\index{order\+\_\+manager.\+c@{order\+\_\+manager.\+c}!is\+\_\+order\+\_\+at\+\_\+floor@{is\+\_\+order\+\_\+at\+\_\+floor}}
+\index{is\+\_\+order\+\_\+at\+\_\+floor@{is\+\_\+order\+\_\+at\+\_\+floor}!order\+\_\+manager.\+c@{order\+\_\+manager.\+c}}
+\subsubsection[{\texorpdfstring{is\+\_\+order\+\_\+at\+\_\+floor(int floor, elev\+\_\+motor\+\_\+direction\+\_\+t motor\+\_\+dir)}{is_order_at_floor(int floor, elev_motor_direction_t motor_dir)}}]{\setlength{\rightskip}{0pt plus 5cm}int is\+\_\+order\+\_\+at\+\_\+floor (
+\begin{DoxyParamCaption}
+\item[{int}]{floor, }
+\item[{{\bf elev\+\_\+motor\+\_\+direction\+\_\+t}}]{motor\+\_\+dir}
+\end{DoxyParamCaption}
+)}\hypertarget{order__manager_8c_ae574e8525583cfbb6adc9e7f32548d1c}{}\label{order__manager_8c_ae574e8525583cfbb6adc9e7f32548d1c}
+
+
+Checks if an order is at a given floor and if the elevator should stop. The elevator should only stop if the elevator\textquotesingle{}s motor direction and order is in the same direction. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em floor} & The floor we want to check if it is any orders at. \\
+\hline
+\mbox{\tt in}  & {\em motor\+\_\+dir} & Motor direction of the elevator\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if it is order at floor and the elevator should stop, 0 if not. 
+\end{DoxyReturn}
+
+
+Definition at line 84 of file order\+\_\+manager.\+c.
+
+\index{order\+\_\+manager.\+c@{order\+\_\+manager.\+c}!orders\+\_\+above@{orders\+\_\+above}}
+\index{orders\+\_\+above@{orders\+\_\+above}!order\+\_\+manager.\+c@{order\+\_\+manager.\+c}}
+\subsubsection[{\texorpdfstring{orders\+\_\+above(int current\+\_\+floor)}{orders_above(int current_floor)}}]{\setlength{\rightskip}{0pt plus 5cm}int orders\+\_\+above (
+\begin{DoxyParamCaption}
+\item[{int}]{current\+\_\+floor}
+\end{DoxyParamCaption}
+)}\hypertarget{order__manager_8c_aead0bede1788c3c3050dc49a7e191382}{}\label{order__manager_8c_aead0bede1788c3c3050dc49a7e191382}
+
+
+Checks if it is any orders above {\ttfamily current\+\_\+floor}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em current\+\_\+floor} & The floor we want to check if it is any orders above.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if any orders above, 0 if not. 
+\end{DoxyReturn}
+
+
+Definition at line 50 of file order\+\_\+manager.\+c.
+
+\index{order\+\_\+manager.\+c@{order\+\_\+manager.\+c}!orders\+\_\+below@{orders\+\_\+below}}
+\index{orders\+\_\+below@{orders\+\_\+below}!order\+\_\+manager.\+c@{order\+\_\+manager.\+c}}
+\subsubsection[{\texorpdfstring{orders\+\_\+below(int current\+\_\+floor)}{orders_below(int current_floor)}}]{\setlength{\rightskip}{0pt plus 5cm}int orders\+\_\+below (
+\begin{DoxyParamCaption}
+\item[{int}]{current\+\_\+floor}
+\end{DoxyParamCaption}
+)}\hypertarget{order__manager_8c_a704d50341b06a68154a6e4bcdf950c31}{}\label{order__manager_8c_a704d50341b06a68154a6e4bcdf950c31}
+
+
+Checks if it is any orders below {\ttfamily current\+\_\+floor}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em current\+\_\+floor} & The floor we want to check if it is any orders below.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if any orders below, 0 if not. 
+\end{DoxyReturn}
+
+
+Definition at line 62 of file order\+\_\+manager.\+c.
+
+\index{order\+\_\+manager.\+c@{order\+\_\+manager.\+c}!set\+\_\+order@{set\+\_\+order}}
+\index{set\+\_\+order@{set\+\_\+order}!order\+\_\+manager.\+c@{order\+\_\+manager.\+c}}
+\subsubsection[{\texorpdfstring{set\+\_\+order(int floor, elev\+\_\+button\+\_\+type\+\_\+t button\+\_\+type)}{set_order(int floor, elev_button_type_t button_type)}}]{\setlength{\rightskip}{0pt plus 5cm}void set\+\_\+order (
+\begin{DoxyParamCaption}
+\item[{int}]{floor, }
+\item[{{\bf elev\+\_\+button\+\_\+type\+\_\+t}}]{button\+\_\+type}
+\end{DoxyParamCaption}
+)}\hypertarget{order__manager_8c_ad8979de5df4ed8a898d1b837b540c22d}{}\label{order__manager_8c_ad8979de5df4ed8a898d1b837b540c22d}
+
+
+Sets an order to active and updates order lights. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em floor} & At which floor the order is at \\
+\hline
+\mbox{\tt in}  & {\em button\+\_\+type} & If the order is UP, D\+O\+WN or C\+O\+M\+M\+A\+ND. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 33 of file order\+\_\+manager.\+c.
+

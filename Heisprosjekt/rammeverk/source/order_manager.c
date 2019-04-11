@@ -1,3 +1,5 @@
+/**@file order_manager.c
+*/
 #include "order_manager.h"
 #include "elev_driver.h"
 #include "elevator.h"
@@ -32,13 +34,13 @@ void set_order(int floor, elev_button_type_t button_type){
     //In case of faulty code
     if (floor == 0 && button_type == BUTTON_CALL_DOWN){}
     else if (floor == N_FLOORS-1 && button_type == BUTTON_CALL_UP){}
-    
+
     else
     {
         Orderlist[floor][button_type].active=1;
         update_button_lights();
     }
-    
+
 }
 
 order get_order(int floor, elev_button_type_t button_type){
@@ -81,11 +83,9 @@ int is_active_orders(){
 
 int is_order_at_floor(int floor, elev_motor_direction_t motor_dir){
     if (floor != -1 && !orders_above(floor) && motor_dir == DIRN_UP && get_current_motor_dir() == DIRN_UP){
-        printf("DERFOR FUNKER DEN ITJ1\n");
         return 1; //true
     }
     else if (floor != -1 && !orders_below(floor) && motor_dir == DIRN_DOWN && get_current_motor_dir() == DIRN_DOWN){
-        printf("DERFOR FUNKER DEN ITJ2\n");
         return 1; //true
     }
     else{
@@ -118,4 +118,3 @@ void update_button_lights(){
         }
     }
 }
-

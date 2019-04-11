@@ -1,3 +1,6 @@
+/**@file channels.h
+*/
+
 // Channel definitions for elevator control using LibComedi
 //
 // 2006, Martin Korsgaard

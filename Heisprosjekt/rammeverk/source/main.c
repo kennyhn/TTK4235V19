@@ -1,3 +1,6 @@
+/**@file main.c
+*/
+
 #include "elev_driver.h"
 #include "order_manager.h"
 #include "controller.h"
@@ -6,12 +9,7 @@
 #include "elevator.h"
 
 #include <stdio.h>
-/*
-    elev_motor_direction_t
-    BUTTON_CALL_UP
-    BUTTON_CALL_DOWN
-    BUTTON_COMMAND
-*/
+
 
 
 
@@ -34,21 +32,17 @@ int main() {
         switch(current_state){
 
             case STOP_SHAFT:
-                printf("STOP SHAFT\n");
                 state_STOP_shaft();
                 break;
             case STOP_FLOOR:
-                printf("STOP FLOOR\n");
                 state_STOP_floor();
             case DOOR_OPEN:
-                printf("DOOR OPEN\n");
                 state_door_open();
             case IDLE:
-                printf("IDLE\n");
                 state_idle();
                 break;
             case MOVING:
-                motor_dir = choose_dir(get_current_floor(), get_current_motor_dir());
+                motor_dir = choose_dir();
                 state_moving(motor_dir);
                 break;
         }

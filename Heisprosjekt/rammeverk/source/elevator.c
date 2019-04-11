@@ -1,9 +1,14 @@
+/**@file elevator.c
+*/
 #include "elev_driver.h"
 #include "timer.h"
 #include "controller.h"
 #include "order_manager.h"
 #include <stdio.h>
 
+/**
+ * Info about the current and last floor and motor direction of the elevator.
+ */
 typedef struct ElevatorInfo {
     elev_motor_direction_t curr_motor_dir;
     elev_motor_direction_t last_motor_dir;

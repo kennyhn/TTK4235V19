@@ -1,3 +1,5 @@
+/**@file controller.c
+*/
 #include "controller.h"
 #include "elevator.h"
 #include "order_manager.h"
@@ -21,11 +23,13 @@ state next_state(){
   return -1;
 }
 
-elev_motor_direction_t choose_dir(float current_floor, elev_motor_direction_t curr_motor_dir){
-  //float current_floor = get_last_floor();
+elev_motor_direction_t choose_dir(){
+
+  float current_floor = get_last_floor();
 
   //Continue same direction
-/*
+
+
   if (get_current_motor_dir() == DIRN_UP && orders_above(current_floor)){
       return DIRN_UP;
   }
@@ -36,19 +40,6 @@ elev_motor_direction_t choose_dir(float current_floor, elev_motor_direction_t cu
 
 
   if (get_current_floor() == -1){
-    current_floor = current_floor+(float)get_last_motor_dir()*0.5;
-  }
-*/
-  if (curr_motor_dir == DIRN_UP && orders_above(current_floor)){
-      return DIRN_UP;
-  }
-
-  else if (curr_motor_dir == DIRN_DOWN && orders_below(current_floor)){
-      return DIRN_DOWN;
-  }
-
-
-  if (current_floor == -1){
     current_floor = current_floor+(float)get_last_motor_dir()*0.5;
   }
 

@@ -1,3 +1,7 @@
+/**@file state_machine.h
+ * @brief Functions for the state of the elevatormake break
+ */
+
 #ifndef __STATE_MACHINE_H__
 #define __STATE_MACHINE_H__
 
@@ -18,26 +22,26 @@ void state_init();
 void state_idle();
 
 /**
- * @brief Sets elevator to move in a direction.
+ * @brief Sets elevator to move in the direction @p motor_dir.
  *
- * @param motor_dir The direction the elevator is moving.
+ * @param motor_dir The direction the elevator should move.
  */
 void state_moving(elev_motor_direction_t motor_dir);
 
 /**
- * @brief Opens door and sets door lights for 3 sec.
+ * @brief Opens door and holds door for 3 sec. Clear all orders at floor.
  */
 
 void state_door_open();
 
 /**
- * @brief Clear all orders and stops the elevator as long as the STOP button is pressed in shaft.
+ * @brief Delete all orders and stops the elevator as long as the STOP button is pressed between floors.
  */
 
 void state_STOP_shaft();
 
 /**
- * @brief Clear all orders and stops the elevator as long as the STOP button is pressed at floor. 
+ * @brief Delete all orders and stops the elevator as long as the STOP button is pressed at a floor. 
  */
 
 void state_STOP_floor();

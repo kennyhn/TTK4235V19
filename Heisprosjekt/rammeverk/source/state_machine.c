@@ -1,3 +1,5 @@
+/**@file state_machine.c
+*/
 #include "state_machine.h"
 #include "elevator.h"
 #include "elev_driver.h"
@@ -75,4 +77,3 @@ void state_STOP_floor(){
   }
   elev_set_stop_lamp(0);
 }
-

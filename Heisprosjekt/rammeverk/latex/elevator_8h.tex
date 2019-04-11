@@ -1,0 +1,203 @@
+\hypertarget{elevator_8h}{}\section{source/elevator.h File Reference}
+\label{elevator_8h}\index{source/elevator.\+h@{source/elevator.\+h}}
+
+
+Functions for geting and seting the elevators floor and motor direction.  
+
+
+{\ttfamily \#include \char`\"{}elev\+\_\+driver.\+h\char`\"{}}\\*
+Include dependency graph for elevator.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{elevator_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{elevator_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{elevator_8h_a19c7b7e959f0f2621a6566df8cb7b3ba}{set\+\_\+current\+\_\+motor\+\_\+dir} (\hyperlink{elev__driver_8h_a2256dfd58fecce253106f83fd2ed607f}{elev\+\_\+motor\+\_\+direction\+\_\+t} curr\+\_\+motor\+\_\+dir)
+\begin{DoxyCompactList}\small\item\em Sets {\ttfamily curr\+\_\+motor\+\_\+dir}. \end{DoxyCompactList}\item 
+void \hyperlink{elevator_8h_a35063f28c57cd4c2cfe3b2d12a3a7cc3}{set\+\_\+last\+\_\+motor\+\_\+dir} (\hyperlink{elev__driver_8h_a2256dfd58fecce253106f83fd2ed607f}{elev\+\_\+motor\+\_\+direction\+\_\+t} last\+\_\+motor\+\_\+dir)
+\begin{DoxyCompactList}\small\item\em Sets {\ttfamily last\+\_\+motor\+\_\+dir}. \end{DoxyCompactList}\item 
+void \hyperlink{elevator_8h_a835af862b8f5f8c813437f97f5c107e0}{set\+\_\+current\+\_\+floor} (int curr\+\_\+floor)
+\begin{DoxyCompactList}\small\item\em Sets {\ttfamily curr\+\_\+floor}. \end{DoxyCompactList}\item 
+void \hyperlink{elevator_8h_a19b6f7e1acdb71f74ea2233560008ae1}{set\+\_\+last\+\_\+floor} (int last\+\_\+floor)
+\begin{DoxyCompactList}\small\item\em Sets {\ttfamily last\+\_\+floor}. \end{DoxyCompactList}\item 
+\hyperlink{elev__driver_8h_a2256dfd58fecce253106f83fd2ed607f}{elev\+\_\+motor\+\_\+direction\+\_\+t} \hyperlink{elevator_8h_a49b69d3b57f7320772b00a17bfa189be}{get\+\_\+current\+\_\+motor\+\_\+dir} ()
+\begin{DoxyCompactList}\small\item\em Gets the elevator\textquotesingle{}s current motor direction. \end{DoxyCompactList}\item 
+\hyperlink{elev__driver_8h_a2256dfd58fecce253106f83fd2ed607f}{elev\+\_\+motor\+\_\+direction\+\_\+t} \hyperlink{elevator_8h_a38d0f671c4e590729f716c236f05484e}{get\+\_\+last\+\_\+motor\+\_\+dir} ()
+\begin{DoxyCompactList}\small\item\em Gets the elevator\textquotesingle{}s last motor direction. \end{DoxyCompactList}\item 
+int \hyperlink{elevator_8h_a6f0d72c6372b6150b260a70e0c4ecbb5}{get\+\_\+last\+\_\+floor} ()
+\begin{DoxyCompactList}\small\item\em Gets the last floor the elevator has been at. \end{DoxyCompactList}\item 
+int \hyperlink{elevator_8h_a72be1591c37ccc47bcddab6e87a729b8}{get\+\_\+current\+\_\+floor} ()
+\begin{DoxyCompactList}\small\item\em Gets which floor the elevator is at. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Functions for geting and seting the elevators floor and motor direction. 
+
+
+
+\subsection{Function Documentation}
+\index{elevator.\+h@{elevator.\+h}!get\+\_\+current\+\_\+floor@{get\+\_\+current\+\_\+floor}}
+\index{get\+\_\+current\+\_\+floor@{get\+\_\+current\+\_\+floor}!elevator.\+h@{elevator.\+h}}
+\subsubsection[{\texorpdfstring{get\+\_\+current\+\_\+floor()}{get_current_floor()}}]{\setlength{\rightskip}{0pt plus 5cm}int get\+\_\+current\+\_\+floor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{elevator_8h_a72be1591c37ccc47bcddab6e87a729b8}{}\label{elevator_8h_a72be1591c37ccc47bcddab6e87a729b8}
+
+
+Gets which floor the elevator is at. 
+
+\begin{DoxyReturn}{Returns}
+current floor if elevator at floor. -\/1 if between two floors. 
+\end{DoxyReturn}
+
+
+Definition at line 45 of file elevator.\+c.
+
+\index{elevator.\+h@{elevator.\+h}!get\+\_\+current\+\_\+motor\+\_\+dir@{get\+\_\+current\+\_\+motor\+\_\+dir}}
+\index{get\+\_\+current\+\_\+motor\+\_\+dir@{get\+\_\+current\+\_\+motor\+\_\+dir}!elevator.\+h@{elevator.\+h}}
+\subsubsection[{\texorpdfstring{get\+\_\+current\+\_\+motor\+\_\+dir()}{get_current_motor_dir()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf elev\+\_\+motor\+\_\+direction\+\_\+t} get\+\_\+current\+\_\+motor\+\_\+dir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{elevator_8h_a49b69d3b57f7320772b00a17bfa189be}{}\label{elevator_8h_a49b69d3b57f7320772b00a17bfa189be}
+
+
+Gets the elevator\textquotesingle{}s current motor direction. 
+
+\begin{DoxyReturn}{Returns}
+The elevator\textquotesingle{}s current motor direction. 
+\end{DoxyReturn}
+
+
+Definition at line 37 of file elevator.\+c.
+
+\index{elevator.\+h@{elevator.\+h}!get\+\_\+last\+\_\+floor@{get\+\_\+last\+\_\+floor}}
+\index{get\+\_\+last\+\_\+floor@{get\+\_\+last\+\_\+floor}!elevator.\+h@{elevator.\+h}}
+\subsubsection[{\texorpdfstring{get\+\_\+last\+\_\+floor()}{get_last_floor()}}]{\setlength{\rightskip}{0pt plus 5cm}int get\+\_\+last\+\_\+floor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{elevator_8h_a6f0d72c6372b6150b260a70e0c4ecbb5}{}\label{elevator_8h_a6f0d72c6372b6150b260a70e0c4ecbb5}
+
+
+Gets the last floor the elevator has been at. 
+
+\begin{DoxyReturn}{Returns}
+last floor 
+\end{DoxyReturn}
+
+
+Definition at line 49 of file elevator.\+c.
+
+\index{elevator.\+h@{elevator.\+h}!get\+\_\+last\+\_\+motor\+\_\+dir@{get\+\_\+last\+\_\+motor\+\_\+dir}}
+\index{get\+\_\+last\+\_\+motor\+\_\+dir@{get\+\_\+last\+\_\+motor\+\_\+dir}!elevator.\+h@{elevator.\+h}}
+\subsubsection[{\texorpdfstring{get\+\_\+last\+\_\+motor\+\_\+dir()}{get_last_motor_dir()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf elev\+\_\+motor\+\_\+direction\+\_\+t} get\+\_\+last\+\_\+motor\+\_\+dir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{elevator_8h_a38d0f671c4e590729f716c236f05484e}{}\label{elevator_8h_a38d0f671c4e590729f716c236f05484e}
+
+
+Gets the elevator\textquotesingle{}s last motor direction. 
+
+\begin{DoxyReturn}{Returns}
+The elevator\textquotesingle{}s last motor direction. 
+\end{DoxyReturn}
+
+
+Definition at line 41 of file elevator.\+c.
+
+\index{elevator.\+h@{elevator.\+h}!set\+\_\+current\+\_\+floor@{set\+\_\+current\+\_\+floor}}
+\index{set\+\_\+current\+\_\+floor@{set\+\_\+current\+\_\+floor}!elevator.\+h@{elevator.\+h}}
+\subsubsection[{\texorpdfstring{set\+\_\+current\+\_\+floor(int curr\+\_\+floor)}{set_current_floor(int curr_floor)}}]{\setlength{\rightskip}{0pt plus 5cm}void set\+\_\+current\+\_\+floor (
+\begin{DoxyParamCaption}
+\item[{int}]{curr\+\_\+floor}
+\end{DoxyParamCaption}
+)}\hypertarget{elevator_8h_a835af862b8f5f8c813437f97f5c107e0}{}\label{elevator_8h_a835af862b8f5f8c813437f97f5c107e0}
+
+
+Sets {\ttfamily curr\+\_\+floor}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em curr\+\_\+floor} & Elevator\textquotesingle{}s current floor. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 29 of file elevator.\+c.
+
+\index{elevator.\+h@{elevator.\+h}!set\+\_\+current\+\_\+motor\+\_\+dir@{set\+\_\+current\+\_\+motor\+\_\+dir}}
+\index{set\+\_\+current\+\_\+motor\+\_\+dir@{set\+\_\+current\+\_\+motor\+\_\+dir}!elevator.\+h@{elevator.\+h}}
+\subsubsection[{\texorpdfstring{set\+\_\+current\+\_\+motor\+\_\+dir(elev\+\_\+motor\+\_\+direction\+\_\+t curr\+\_\+motor\+\_\+dir)}{set_current_motor_dir(elev_motor_direction_t curr_motor_dir)}}]{\setlength{\rightskip}{0pt plus 5cm}void set\+\_\+current\+\_\+motor\+\_\+dir (
+\begin{DoxyParamCaption}
+\item[{{\bf elev\+\_\+motor\+\_\+direction\+\_\+t}}]{curr\+\_\+motor\+\_\+dir}
+\end{DoxyParamCaption}
+)}\hypertarget{elevator_8h_a19c7b7e959f0f2621a6566df8cb7b3ba}{}\label{elevator_8h_a19c7b7e959f0f2621a6566df8cb7b3ba}
+
+
+Sets {\ttfamily curr\+\_\+motor\+\_\+dir}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em curr\+\_\+motor\+\_\+dir} & The elevator\textquotesingle{}s current motor direction. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 21 of file elevator.\+c.
+
+\index{elevator.\+h@{elevator.\+h}!set\+\_\+last\+\_\+floor@{set\+\_\+last\+\_\+floor}}
+\index{set\+\_\+last\+\_\+floor@{set\+\_\+last\+\_\+floor}!elevator.\+h@{elevator.\+h}}
+\subsubsection[{\texorpdfstring{set\+\_\+last\+\_\+floor(int last\+\_\+floor)}{set_last_floor(int last_floor)}}]{\setlength{\rightskip}{0pt plus 5cm}void set\+\_\+last\+\_\+floor (
+\begin{DoxyParamCaption}
+\item[{int}]{last\+\_\+floor}
+\end{DoxyParamCaption}
+)}\hypertarget{elevator_8h_a19b6f7e1acdb71f74ea2233560008ae1}{}\label{elevator_8h_a19b6f7e1acdb71f74ea2233560008ae1}
+
+
+Sets {\ttfamily last\+\_\+floor}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em last\+\_\+floor} & Elevator\textquotesingle{}s last floor. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 33 of file elevator.\+c.
+
+\index{elevator.\+h@{elevator.\+h}!set\+\_\+last\+\_\+motor\+\_\+dir@{set\+\_\+last\+\_\+motor\+\_\+dir}}
+\index{set\+\_\+last\+\_\+motor\+\_\+dir@{set\+\_\+last\+\_\+motor\+\_\+dir}!elevator.\+h@{elevator.\+h}}
+\subsubsection[{\texorpdfstring{set\+\_\+last\+\_\+motor\+\_\+dir(elev\+\_\+motor\+\_\+direction\+\_\+t last\+\_\+motor\+\_\+dir)}{set_last_motor_dir(elev_motor_direction_t last_motor_dir)}}]{\setlength{\rightskip}{0pt plus 5cm}void set\+\_\+last\+\_\+motor\+\_\+dir (
+\begin{DoxyParamCaption}
+\item[{{\bf elev\+\_\+motor\+\_\+direction\+\_\+t}}]{last\+\_\+motor\+\_\+dir}
+\end{DoxyParamCaption}
+)}\hypertarget{elevator_8h_a35063f28c57cd4c2cfe3b2d12a3a7cc3}{}\label{elevator_8h_a35063f28c57cd4c2cfe3b2d12a3a7cc3}
+
+
+Sets {\ttfamily last\+\_\+motor\+\_\+dir}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em last\+\_\+motor\+\_\+dir} & The elevator\textquotesingle{}s last motor direction. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 25 of file elevator.\+c.
+

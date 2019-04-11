@@ -1,47 +1,51 @@
+/**@file elevator.h
+ * @brief Functions for geting and seting the elevators floor and motor direction.
+ */
+
 #ifndef __ELEVATOR_H__
 #define __ELEVATOR_H__
 #include "elev_driver.h"
 
 /**
- * @brief Sets the elevator's current motor direction.
+ * @brief Sets @p curr_motor_dir.
  *
- * @param[in] curr_motor_dir Current motor direction
+ * @param[in] curr_motor_dir The elevator's current motor direction.
  */
-void set_current_motor_dir(elev_motor_direction_t curr_motor_dir); //i elev_driver.c??
+void set_current_motor_dir(elev_motor_direction_t curr_motor_dir);
 
 /**
- * @brief Sets the elevator's last motor direction.
+ * @brief Sets @p last_motor_dir.
  *
- * @param[in] last_motor_dir Last motor direction
+ * @param[in] last_motor_dir The elevator's last motor direction.
  */
 void set_last_motor_dir(elev_motor_direction_t last_motor_dir);
 
 /**
- * @brief Sets the elevator's current floor.
+ * @brief Sets @p curr_floor.
  *
- * @param[in] curr_floor Current floor
+ * @param[in] curr_floor Elevator's current floor.
  */
 
 void set_current_floor(int curr_floor);
 
 /**
- * @brief Sets the elevator's last floor.
+ * @brief Sets @p last_floor.
  *
- * @param[in] last_floor Last floor
+ * @param[in] last_floor Elevator's last floor.
  */
 void set_last_floor(int last_floor);
 
 /**
  * @brief Gets the elevator's current motor direction.
  *
- * @return elev_motor_direction_t current motor direction
+ * @return The elevator's current motor direction.
  */
 elev_motor_direction_t get_current_motor_dir();
 
 /**
  * @brief Gets the elevator's last motor direction.
  *
- * @return elev_motor_direction_t last motor direction
+ * @return The elevator's last motor direction.
  */
 
 elev_motor_direction_t get_last_motor_dir();
@@ -49,14 +53,14 @@ elev_motor_direction_t get_last_motor_dir();
 /**
  * @brief Gets the last floor the elevator has been at.
  *
- * @return last floor (int)
+ * @return last floor
  */
 int get_last_floor();
 
 /**
  * @brief Gets which floor the elevator is at.
  *
- * @return current floor (int) if elevator at a floor. -1 if between two floors.
+ * @return current floor if elevator at floor. -1 if between two floors.
  */
 int get_current_floor();
 
